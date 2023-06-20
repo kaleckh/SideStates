@@ -2,7 +2,6 @@
 import React, { useRef, useEffect } from "react";
 // import Header from "./header/page";
 import Head from "next/head";
-import Link from "next/link";
 // import Footer from "./footer/page";
 import Image from "next/image";
 import { PatternFormat } from "react-number-format";
@@ -220,16 +219,14 @@ const Home = () => {
           </div>
         </div>
         <div className={styles.boxContainer}>
-          <div className={styles.titleMid}> Other Reliable Models</div>
+          <div className={styles.titleMid}>Other Reliable Models</div>
           <div className={styles.box}>
             <div>
               <Image src={"/xc6152.webp"} height={120} width={120} />
             </div>
             <div className={styles.titleSmall}>Lexmark XC6152</div>
             <div className={styles.buttonContainer1}>
-              <Link href={'/6152'}>
-                <button className={styles.button1}>See Details</button>
-              </Link>
+              <button className={styles.button1}>See Details</button>
             </div>
           </div>
           <div className={styles.box}>
@@ -238,16 +235,12 @@ const Home = () => {
             </div>
             <div className={styles.titleSmall}>Lexmark XC8163</div>
             <div className={styles.buttonContainer1}>
-            <Link href={'/8163'}>
-                <button className={styles.button1}>See Details</button>
-              </Link>
+              <button className={styles.button1}>See Details</button>
             </div>
           </div>
           <div className={styles.box}>
             <div>
-            <Link href={'/8163'}>
-                <button className={styles.button1}>See Details</button>
-              </Link>
+              <Image src={"/6153.webp"} height={120} width={100} />
             </div>
             <div className={styles.titleSmall}>Lexmark XC6153</div>
             <div className={styles.buttonContainer1}>
