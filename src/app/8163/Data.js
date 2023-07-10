@@ -93,7 +93,8 @@ const Home = () => {
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
           <Link href={'/'}>
-            <Image
+                      <Image
+                          slt={"copiers arizona logo"}
               src={`/logo.webp`}
               alt="Lexmark used and new printer"
               width={270}
@@ -120,7 +121,7 @@ const Home = () => {
         <div className={styles.copierContainer}>
           <div className={styles.bigTitle}>Lexmark XC 8160 Multifunction Printer</div>
 
-          <Image src={`/8160.webp`} width={200} height={300} />
+          <Image alt={"Lexmark XC 8160"} src={`/8160.webp`} width={200} height={300} />
         </div>
         <div className={styles.centerMain}>
           <div className={styles.title}>
@@ -146,7 +147,7 @@ const Home = () => {
       </div>
       <div className={styles.title}>Specs And Other Options</div>
       <div className={styles.center}>
-        <Image src={"/down-arrow-5.webp"} width={100} height={100} />
+        <Image alt={"down arrow"} src={"/down-arrow-5.webp"} width={100} height={100} />
       </div>
       <div className={styles.center}>
         <div className={styles.lineSmall}></div>
@@ -228,7 +229,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Image src={'/8160.webp'} height={300} width={200} />
+        <Image alt={"Lexmark XC8160"} src={'/8160.webp'} height={300} width={200} />
       </div>
       <div className={styles.centerBox}>
         <div style={{ paddingBottom: "100px" }} className={styles.title}>Our Select Reliable Choices</div>
@@ -239,7 +240,7 @@ const Home = () => {
             </div>
             <div className={styles.box}>
               <div>
-                <Image src={"/xc6152.webp"} height={120} width={120} />
+                <Image alt={"Lexmark XC8160"} src={"/xc6152.webp"} height={120} width={120} />
               </div>
               <div className={styles.titleSmall}>Lexmark XC6152</div>
               <div className={styles.buttonContainer1}>
@@ -255,7 +256,7 @@ const Home = () => {
             </div>
             <div className={styles.box}>
               <div>
-                <Image src={'/8160.webp'} height={200} width={150} />
+                <Image alt={"Lexmark XC8160"} src={'/8160.webp'} height={200} width={150} />
               </div>
               <div className={styles.titleSmall}>Lexmark XC6152</div>
               <div className={styles.buttonContainer1}>
@@ -271,7 +272,7 @@ const Home = () => {
             </div>
             <div className={styles.box}>
               <div>
-                <Image src={"/xc6152.webp"} height={120} width={120} />
+                <Image alt={"Lexmark XC6152"} src={"/xc6152.webp"} height={120} width={120} />
               </div>
               <div className={styles.titleSmall}>Lexmark XC6152</div>
               <div className={styles.buttonContainer1}>
@@ -285,7 +286,7 @@ const Home = () => {
       </div>
       <div className={styles.centerBoxColumn}>
         <div style={{ padding: "20px" }} className={styles.title}>About Copiers Arizona</div>
-        <Image style={{ borderRadius: "5px" }} src={'/team.webp'} height={450} width={350} />
+        <Image alt={"Copiers Arizona Logo"} style={{ borderRadius: "5px" }} src={'/team.webp'} height={450} width={350} />
         <div className={styles.paragraphContainerMed}>
           <div className={styles.paragraphNo}>
 
@@ -407,7 +408,7 @@ const Home = () => {
             Get My Free Quote
           </button>
         </div>
-        <Image src={'/handshake.webp'} height={600} width={500} />
+        <Image alt={"Team Handshake"} src={'/handshake.webp'} height={600} width={500} />
       </div>
       <div className={styles.centerBox}>
         <div className={styles.title}>Footer</div>
