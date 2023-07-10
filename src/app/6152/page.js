@@ -11,7 +11,7 @@ import styles from "../page.module.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useState } from "react";
-const something = () => {
+const Something = () => {
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const tawkMessengerRef = useRef();
   const [gray, setGray] = useState(true);
@@ -171,9 +171,7 @@ const something = () => {
             <div style={{ width: "150%" }} className={styles.line} />
           </div>
           <div className={styles.row}>
-            {quote ? (
-              <Form />
-            ) : (
+            
                 <div className={styles.column}>
                   <div className={styles.bigTitle}>
                     Lexmark XC 8160 Multifunction Printer
@@ -224,7 +222,7 @@ const something = () => {
                     </div>
                   </div>
                 </div>
-              )}
+              
           </div>
           <div style={{ height: "40%", width: "100vw", display: "flex", alignItems: "center", marginLeft: "35%", paddingTop: "50px" }} className={styles.konikaBottom}>
             <div className={styles.bottomProductContainer}>
@@ -427,4 +425,4 @@ const something = () => {
   );
 };
 
-export default something;
+export default Something;
