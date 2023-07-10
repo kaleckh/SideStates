@@ -97,7 +97,7 @@ const Something = () => {
                           <Image
                               alt={"copiers arizona logo"}
                 src={`/logo.webp`}
-                alt="Lexmark used and new printer"
+                
                 width={270}
                 height={270}
               />

@@ -94,7 +94,7 @@ const Home = () => {
         <div className={styles.logoSpace}>
           <Link href={'/'}>
                       <Image
-                          slt={"copiers arizona logo"}
+                          
               src={`/logo.webp`}
               alt="Lexmark used and new printer"
               width={270}

@@ -96,7 +96,7 @@ const Home = () => {
             <Image
               alt={"Copiers Arizona Logo"}
               src={`/logo.webp`}
-              alt="Lexmark used and new printer"
+              
               width={270}
               height={270}
             />
