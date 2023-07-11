@@ -122,7 +122,7 @@ const Something = () => {
       <div className={styles.line}></div>
       <div className={styles.section}>
         <div className={styles.copierContainer}>
-          <div className={styles.bigTitle}>Lexmark XC 8160</div>
+          <h1 className={styles.bigTitle}>Lexmark XC 8160</h1>
 
           <Image alt={"Lexmark XC8160"} src={`/8160.webp`} width={200} height={300} />
         </div>
