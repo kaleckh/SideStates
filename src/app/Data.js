@@ -92,10 +92,10 @@ const Home = () => {
 
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
-                  <Image
-                      alt={"copiers arizona"}
+          <Image
+            alt={"copiers arizona"}
             src={`/logo.webp`}
-            
+
             width={270}
             height={270}
           />
@@ -163,62 +163,50 @@ const Home = () => {
         >
           <div className={styles.backContainer}></div>
           <div className={styles.lineColumn}>
-            <div className={styles.color}>{}</div>
+            <div className={styles.color}>{ }</div>
             <div style={{ width: "150%" }} className={styles.line} />
           </div>
           <div className={styles.row}>
-            
-                <div className={styles.column}>
-                  <div className={styles.bigTitle}>
-                    Lexmark XC 8160 Multifunction Printer
-                </div>
-                  <div className={styles.aboutRow}>
-                    <div
-                      onClick={() => {
-                        setGray(true);
-                      }}
-                      className={
-                        gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                      }
-                    >
-                      About
+
+            <div className={styles.column}>
+              <div className={styles.bigTitle}>
+                Lexmark XC 8160 Multifunction Printer
+              </div>
+
+              <div>
+                <div>
+                  <div className={styles.bulletContainer}>
+                  <Image alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
+                    <div className={styles.paragraphSmall}>
+                      Print speeds at {printSpeed} pages per minute!
+                    </div>
                   </div>
+                  <div className={styles.bulletContainer}>
+                    <Image alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
+                    <div className={styles.paragraphSmall}>
+                      Largest print size is {paperSize} inches
+                    </div>
                   </div>
-                  <div className={styles.line}></div>
-                  <div>
-                    <div>
-                      <div className={styles.bulletContainer}>
-                        <div className={styles.bullet}>1s</div>
-                        <div className={styles.paragraphSmall}>
-                          Print speeds at {printSpeed} pages per minute!
-                      </div>
-                      </div>
-                      <div className={styles.bulletContainer}>
-                        <div className={styles.bullet}>1s</div>
-                        <div className={styles.paragraphSmall}>
-                          Largest print size is {paperSize} inches
-                      </div>
-                      </div>
-                      <div className={styles.bulletContainer}>
-                        <div className={styles.bullet}>1s</div>
-                        <div className={styles.paragraphSmall}>
-                          First page out time is {timeOut} seconds
-                      </div>
-                      </div>
-                      <div className={styles.bulletContainer}>
-                        <div className={styles.bullet}>1s</div>
-                        <div className={styles.paragraphSmall}>{lastBullet}</div>
-                      </div>
-                      <div className={styles.bulletContainer}>
-                        <div className={styles.bullet}>1s</div>
-                        <div className={styles.paragraphSmall}>
-                          {almostLastBullet}
-                        </div>
-                      </div>
+                  <div className={styles.bulletContainer}>
+                    <Image alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
+                    <div className={styles.paragraphSmall}>
+                      First page out time is {timeOut} seconds
+                    </div>
+                  </div>
+                  <div className={styles.bulletContainer}>
+                    <Image alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
+                    <div className={styles.paragraphSmall}>{lastBullet}</div>
+                  </div>
+                  <div className={styles.bulletContainer}>
+                    <Image alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
+                    <div className={styles.paragraphSmall}>
+                      {almostLastBullet}
                     </div>
                   </div>
                 </div>
-              
+              </div>
+            </div>
+
           </div>
           <div style={{ height: "40%", width: "100vw", display: "flex", alignItems: "center", marginLeft: "35%", paddingTop: "50px" }} className={styles.konikaBottom}>
             <div className={styles.bottomProductContainer}>
@@ -227,56 +215,79 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Image alt={"lexmark 8160"} src={'/8160.webp'} height={300} width={200} />
+        <div className={styles.imageContainer}>
+          <Image alt={"lexmark 8160"} src={'/8160.webp'} height={300} width={200} />
+        </div>
       </div>
       <div className={styles.centerBox}>
-        <div style={{ paddingBottom: "100px" }} className={styles.title}>Our Select Reliable Choices</div>
-        <div style={{ display: "flex" }}>
-          <div className={styles.boxContainer}>
-            <div className={styles.titleMed}>
-              Our Favorite Black And White Option
-            </div>
-            <div className={styles.box}>
-              <div>
-                <Image alt={"lexmark xc62152"} src={"/xc6152.webp"} height={120} width={120} />
+        <div style={{ paddingBottom: "10px" }} className={styles.title}>Our Select Reliable Choices</div>
+        <div className={styles.grid}>
+          <div className={styles.flex}>
+            <div className={styles.boxContainer}>
+              <div className={styles.box}>
+              <div className={styles.titleMed}>
+                Our Favorite Black And White option
               </div>
-              <div className={styles.titleSmall}>Lexmark XC6152</div>
-              <div className={styles.buttonContainer1}>
-                <Link href={"/6152"}>
-                  <button className={styles.button1}>See Details</button>
-                </Link>
+                <div>
+                  <Image alt={"lexmark xc62152"} src={"/xc6152.webp"} height={250} width={250} />
+                </div>
+                <div className={styles.titleSmall}>Lexmark XC6152</div>
+                <div className={styles.buttonContainer1}>
+                  <Link className={styles.aFlex} href={"/6152"}>
+                    <button className={styles.button1}>See Details</button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.boxContainer}>
+              <div className={styles.box}>
+              <div className={styles.titleMed}>
+                Our Favorite Desktop Printer
+              </div>
+                <div>
+                  <Image alt={"lexmark xc8160"} src={'/8160.webp'} height={250} width={200} />
+                </div>
+                <div className={styles.titleSmall}>Lexmark XC6152</div>
+                <div className={styles.buttonContainer1}>
+                  <Link href={"/6152"}>
+                    <button className={styles.button1}>See Details</button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-          <div className={styles.boxContainer}>
-            <div className={styles.titleMed}>
-              Our Favorite Desktop Printer
-            </div>
-            <div className={styles.box}>
-              <div>
-                <Image alt={"lexmark xc8160"}  src={'/8160.webp'} height={200} width={150} />
+          <div className={styles.flex}>
+            <div className={styles.boxContainer}>
+              <div className={styles.box}>
+              <div className={styles.titleMed}>
+                Our Favorite  And White Option
               </div>
-              <div className={styles.titleSmall}>Lexmark XC6152</div>
-              <div className={styles.buttonContainer1}>
-                <Link href={"/6152"}>
-                  <button className={styles.button1}>See Details</button>
-                </Link>
+                <div>
+                  <Image alt={"lexmark xc6152"} src={"/xc6152.webp"} height={250} width={250} />
+                </div>
+                <div className={styles.titleSmall}>Lexmark XC6152</div>
+                <div className={styles.buttonContainer1}>
+                  <Link href={"/6152"}>
+                    <button className={styles.button1}>See Details</button>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-          <div className={styles.boxContainer}>
-            <div className={styles.titleMed}>
-              Our Favorite Black And White Option
-            </div>
-            <div className={styles.box}>
-              <div>
-                <Image alt={"lexmark xc6152"} src={"/xc6152.webp"} height={120} width={120} />
+            <div className={styles.boxContainer}>
+              <div className={styles.box}>
+              <div className={styles.titleMed}>
+                Our Favorite  And White Option
               </div>
-              <div className={styles.titleSmall}>Lexmark XC6152</div>
-              <div className={styles.buttonContainer1}>
-                <Link href={"/6152"}>
-                  <button className={styles.button1}>See Details</button>
-                </Link>
+                <div>
+                  <Image alt={"lexmark xc6152"} src={"/xc6152.webp"} height={250} width={250} />
+                </div>
+                <div className={styles.titleSmall}>Lexmark XC6152</div>
+                <div className={styles.buttonContainer1}>
+                  <Link href={"/6152"}>
+                    <button className={styles.button1}>See Details</button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
