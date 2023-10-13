@@ -6,9 +6,9 @@ import Link from "next/link";
 // import Footer from "./footer/page";
 import Image from "next/image";
 import { PatternFormat } from "react-number-format";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 // import { useRouter } from "next/router";
-import Footer from './components/Footer'
+import Footer from '../components/Footer'
 import ReCAPTCHA from "react-google-recaptcha";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useState } from "react";
