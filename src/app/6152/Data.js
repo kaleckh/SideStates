@@ -8,6 +8,7 @@ import Image from "next/image";
 import { PatternFormat } from "react-number-format";
 import styles from "../page.module.css";
 // import { useRouter } from "next/router";
+import Footer from '../components/Footer'
 import ReCAPTCHA from "react-google-recaptcha";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useState } from "react";
@@ -102,9 +103,13 @@ const Home = () => {
           <div className={styles.columnContainer}>
             <div />
             <div className={styles.rowHead}>
-              <div className={styles.titleSmall}>Home</div>
-              <div className={styles.titleSmall}>Our Models</div>
-              <div className={styles.titleSmall}>About Us</div>
+              <Link href={'/'}>
+                <div className={styles.titleSmallHeader}>Home</div>
+              </Link>
+              <Link href={'/products'}>
+                <div className={styles.titleSmallHeader}>Our Models</div>
+              </Link>
+              <div className={styles.titleSmallHeader}>About Us</div>
             </div>
             <div className={styles.mediumColumn}>
               <div className={styles.infoSmall}>info@copiersutah.com</div>
@@ -129,7 +134,7 @@ const Home = () => {
             style={{
               textAlign: "center",
               fontSize: "18px",
-              margin:"15px",
+              margin: "15px",
               lineHeight: "30px",
             }}
           >
@@ -151,33 +156,27 @@ const Home = () => {
       <div className={styles.center}>
         <div className={styles.lineSmall}></div>
       </div>
-      <div style={{ display: "flex", width: "100%", paddingTop: "20px", display: "flex", justifyContent: "center", paddingBottom: "100px" }}>
+      <div style={{ display: "flex", width: "100%", paddingTop: "20px", display: "flex", justifyContent: "center", paddingBottom: "100px", height: "fit-content" }}>
         <div
           style={{
             height: "fit-content",
-            width: "60%",
+            width: "75%",
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
             justifyContent: "space-around",
           }}
         >
-          <div className={styles.backContainer}></div>
-          <div className={styles.lineColumn}>
-            <div className={styles.color}>{ }</div>
-            <div style={{ width: "150%" }} className={styles.line} />
-          </div>
-          <div className={styles.row}>
-
-            <div className={styles.column}>
-              <div className={styles.bigTitle}>
-                Lexmark XC 8160 Multifunction Printer
-              </div>
+          <div className={styles.column}>
+            <div className={styles.bigTitle}>
+              Lexmark XC 8160 Multifunction Printer
+            </div>
+            <div style={{ height: "100%" }} className={styles.row}>
 
               <div>
-                <div>
+                <div className={styles.fourty}>
                   <div className={styles.bulletContainer}>
-                  <Image className={styles.gap} alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
+                    <Image className={styles.gap} alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
                     <div className={styles.paragraphSmall}>
                       Print speeds at {printSpeed} pages per minute!
                     </div>
@@ -206,18 +205,12 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+              <div className={styles.copierContainer}>
+                <Image alt={"lexmark 8160"} src={`/8160.webp`} width={250} height={350} />
+              </div>
             </div>
+          </div>
 
-          </div>
-          <div style={{ height: "40%", width: "100vw", display: "flex", alignItems: "center", marginLeft: "35%", paddingTop: "50px" }} className={styles.konikaBottom}>
-            <div className={styles.bottomProductContainer}>
-              <div className={styles.paragraph}>{brandDescription}</div>
-              <div className={styles.paragraph}>{description}</div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.imageContainer}>
-          <Image alt={"lexmark 8160"} src={'/8160.webp'} height={300} width={200} />
         </div>
       </div>
       <div className={styles.centerBox}>
@@ -227,9 +220,9 @@ const Home = () => {
           <div className={styles.flex}>
             <div className={styles.boxContainer}>
               <div className={styles.box}>
-              <div className={styles.titleMed}>
-                Our Favorite Black And White option
-              </div>
+                <div className={styles.titleMed}>
+                  Our Favorite Black And White option
+                </div>
                 <div>
                   <Image alt={"lexmark xc62152"} src={"/xc6152.webp"} height={250} width={250} />
                 </div>
@@ -244,9 +237,9 @@ const Home = () => {
 
             <div className={styles.boxContainer}>
               <div className={styles.box}>
-              <div className={styles.titleMed}>
-                Our Favorite Desktop Printer
-              </div>
+                <div className={styles.titleMed}>
+                  Our Favorite Desktop Printer
+                </div>
                 <div>
                   <Image alt={"lexmark xc8160"} src={'/8160.webp'} height={250} width={200} />
                 </div>
@@ -262,9 +255,9 @@ const Home = () => {
           <div className={styles.flex}>
             <div className={styles.boxContainer}>
               <div className={styles.box}>
-              <div className={styles.titleMed}>
-                Our Favorite  And White Option
-              </div>
+                <div className={styles.titleMed}>
+                  Our Favorite  And White Option
+                </div>
                 <div>
                   <Image alt={"lexmark xc6152"} src={"/xc6152.webp"} height={250} width={250} />
                 </div>
@@ -278,9 +271,9 @@ const Home = () => {
             </div>
             <div className={styles.boxContainer}>
               <div className={styles.box}>
-              <div className={styles.titleMed}>
-                Our Favorite  And White Option
-              </div>
+                <div className={styles.titleMed}>
+                  Our Favorite  And White Option
+                </div>
                 <div>
                   <Image alt={"lexmark xc6152"} src={"/xc6152.webp"} height={250} width={250} />
                 </div>
@@ -293,25 +286,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className={styles.centerBoxColumn}>
-        <div style={{ padding: "20px" }} className={styles.title}>About Copiers Arizona</div>
-        <Image alt={"copiers arizona team"} style={{ borderRadius: "5px" }} src={'/team.webp'} height={450} width={350} />
-        <div className={styles.paragraphContainerMed}>
-          <div className={styles.paragraphNo}>
-
-            At Copiers Arizona, we are dedicated to providing businesses in Arizona with reliable copiers that deliver exceptional performance. That's why we have partnered exclusively with Lexmark, a trusted industry leader known for their dependable office equipment. With our strong focus on reliability, you can trust that our selection of Lexmark copiers will meet and exceed your expectations.</div>
-        </div>
-        <div className={styles.paragraphContainerMed}>
-          <div className={styles.paragraphNo}>
-
-            With Lexmark's renowned dependability, our copiers ensure smooth and uninterrupted operations for your business. Whether you need a compact desktop printer or a powerful multifunction device, our range of reliable Lexmark models is designed to handle your printing and copying needs with ease. You can count on our copiers to consistently deliver high-quality results, minimizing downtime and maximizing productivity in your office.</div>
-        </div>
-        <div className={styles.paragraphContainerMed}>
-          <div className={styles.paragraphNo}>
-
-            Choose Copiers Arizona and Lexmark for unrivaled reliability in your office. Contact us today to explore our range of reliable copiers and discover the difference they can make in your business operations.</div>
         </div>
       </div>
       <div className={styles.centerBoxRow}>
@@ -400,6 +374,7 @@ const Home = () => {
 
             <ReCAPTCHA
               style={{
+                padding: "20px",
                 marginBottom: "10px",
                 display: "flex",
                 justifyContent: "center",
@@ -410,38 +385,38 @@ const Home = () => {
             />
           </div>
           <button
+            className={styles.buttonBlue}
             onClick={() => {
               props.quote();
               handleClick();
             }}
-            className={styles.buttonSmall}
+
           >
             Get My Free Quote
           </button>
         </div>
         <Image alt={"handshake"} src={'/handshake.webp'} height={600} width={500} />
       </div>
-      <div className={styles.centerBoxFooter}>
+      <div className={styles.centerBoxColumn}>
+        <div style={{ padding: "20px" }} className={styles.title}>About Copiers Arizona</div>
+        <Image alt={"copiers arizona team"} style={{ borderRadius: "5px" }} src={'/team.webp'} height={450} width={350} />
+        <div className={styles.paragraphContainerMed}>
+          <div className={styles.paragraphNo}>
 
-        <div style={{ width: '80%', display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div className={styles.footerChoicesContainer}>
-            <div className={styles.center}>
-              <div className={styles.footerTitle}>Model Choices</div>
-              <div className={styles.footerChoice}>Lexmark</div>
-              <div className={styles.footerChoice}>Lexmark</div>
-              <div className={styles.footerChoice}>Lexmark</div>
-            </div>
-            <div className={styles.center}>
-              <div className={styles.footerTitle}>Company</div>
-              <div className={styles.footerChoice}>About Us</div>
-            </div>
-          </div>
-          <div>
-            <Image alt={"copiers arizona logo"} src={'/logo.webp'} height={300} width={300} />
-          </div>
+            At Copiers Arizona, we are dedicated to providing businesses in Arizona with reliable copiers that deliver exceptional performance. That's why we have partnered exclusively with Lexmark, a trusted industry leader known for their dependable office equipment. With our strong focus on reliability, you can trust that our selection of Lexmark copiers will meet and exceed your expectations.</div>
+        </div>
+        <div className={styles.paragraphContainerMed}>
+          <div className={styles.paragraphNo}>
+
+            With Lexmark's renowned dependability, our copiers ensure smooth and uninterrupted operations for your business. Whether you need a compact desktop printer or a powerful multifunction device, our range of reliable Lexmark models is designed to handle your printing and copying needs with ease. You can count on our copiers to consistently deliver high-quality results, minimizing downtime and maximizing productivity in your office.</div>
+        </div>
+        <div className={styles.paragraphContainerMed}>
+          <div className={styles.paragraphNo}>
+
+            Choose Copiers Arizona and Lexmark for unrivaled reliability in your office. Contact us today to explore our range of reliable copiers and discover the difference they can make in your business operations.</div>
         </div>
       </div>
-
+      <Footer />
     </div>
   );
 };

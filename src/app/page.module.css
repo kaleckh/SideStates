@@ -485,12 +485,37 @@
 .thirty {
   width: 30%;
 }
+.buttonBlue {
+  appearance: none;
+  color: rgb(2,50,92);
+  background-color: white;
+  border: 1px solid rgb(2,50,92);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 150px;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
 .row {
   display: flex;
   padding: 5px;
   align-items: center;
   justify-content: center;
-  height: 500px;
+  height: 40px;
   
 }
 .titleMid{
@@ -765,7 +790,7 @@
   align-items: center;
   justify-content: space-around;
   background-color: rgb(245, 247, 248);
-  height: 600px;
+  height: fit-content;
   width: 600px;
   /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
   border-radius: 10px;

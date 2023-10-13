@@ -103,7 +103,9 @@ const Home = () => {
           <div className={styles.columnContainer}>
             <div />
             <div className={styles.rowHead}>
-              <div className={styles.titleSmallHeader}>Home</div>
+              <Link href={'/'}>
+                <div className={styles.titleSmallHeader}>Home</div>
+              </Link>
               <Link href={'/products'}>
                 <div className={styles.titleSmallHeader}>Our Models</div>
               </Link>
@@ -154,7 +156,7 @@ const Home = () => {
       <div className={styles.center}>
         <div className={styles.lineSmall}></div>
       </div>
-      <div style={{ display: "flex", width: "100%", paddingTop: "20px", display: "flex", justifyContent: "center", paddingBottom: "100px" }}>
+      <div style={{ display: "flex", width: "100%", paddingTop: "20px", display: "flex", justifyContent: "center", paddingBottom: "100px", height: "fit-content" }}>
         <div
           style={{
             height: "fit-content",
@@ -165,16 +167,11 @@ const Home = () => {
             justifyContent: "space-around",
           }}
         >
-          <div className={styles.lineColumn}>
-            <div className={styles.color}>{ }</div>
-            <div style={{ width: "150%" }} className={styles.line} />
-          </div>
-
           <div className={styles.column}>
             <div className={styles.bigTitle}>
               Lexmark XC 8160 Multifunction Printer
             </div>
-            <div className={styles.row}>
+            <div style={{ height: "100%" }} className={styles.row}>
 
               <div>
                 <div className={styles.fourty}>
@@ -227,9 +224,9 @@ const Home = () => {
                   Our Favorite Black And White option
                 </div>
                 <div>
-                  <Image alt={"lexmark xc62152"} src={"/xc6152.webp"} height={250} width={250} />
+                  <Image alt={"lexmark xc62152"} src={"/8163.webp"} height={250} width={250} />
                 </div>
-                <div className={styles.titleSmall}>Lexmark XC6152</div>
+                <div className={styles.titleSmall}>Lexmark XC8163</div>
                 <div className={styles.buttonContainer1}>
                   <Link className={styles.aFlex} href={"/6152"}>
                     <button className={styles.button1}>See Details</button>
@@ -244,9 +241,9 @@ const Home = () => {
                   Our Favorite Desktop Printer
                 </div>
                 <div>
-                  <Image alt={"lexmark xc8160"} src={'/8160.webp'} height={250} width={200} />
+                  <Image alt={"lexmark xc8160"} src={'/9225.webp'} height={200} width={350} />
                 </div>
-                <div className={styles.titleSmall}>Lexmark XC6152</div>
+                <div className={styles.titleSmall}>Lexmark X9335</div>
                 <div className={styles.buttonContainer1}>
                   <Link href={"/6152"}>
                     <button className={styles.button1}>See Details</button>
@@ -377,6 +374,7 @@ const Home = () => {
 
             <ReCAPTCHA
               style={{
+                padding: "20px",
                 marginBottom: "10px",
                 display: "flex",
                 justifyContent: "center",
@@ -387,11 +385,12 @@ const Home = () => {
             />
           </div>
           <button
+            className={styles.buttonBlue}
             onClick={() => {
               props.quote();
               handleClick();
             }}
-            className={styles.buttonSmall}
+
           >
             Get My Free Quote
           </button>
