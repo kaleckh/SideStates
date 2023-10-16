@@ -6,9 +6,9 @@ import Link from "next/link";
 // import Footer from "./footer/page";
 import Image from "next/image";
 import { PatternFormat } from "react-number-format";
-import styles from "../page.module.css";
+import styles from "./page.module.css";
 // import { useRouter } from "next/router";
-import Footer from '../components/Footer'
+import Footer from './components/Footer'
 import ReCAPTCHA from "react-google-recaptcha";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useState } from "react";
@@ -103,7 +103,9 @@ const Home = () => {
           <div className={styles.columnContainer}>
             <div />
             <div className={styles.rowHead}>
-              <div className={styles.titleSmallHeader}>Home</div>
+              <Link href={'/'}>
+                <div className={styles.titleSmallHeader}>Home</div>
+              </Link>
               <Link href={'/products'}>
                 <div className={styles.titleSmallHeader}>Our Models</div>
               </Link>
@@ -154,7 +156,7 @@ const Home = () => {
       <div className={styles.center}>
         <div className={styles.lineSmall}></div>
       </div>
-      <div style={{ display: "flex", width: "100%", paddingTop: "20px", display: "flex", justifyContent: "center", paddingBottom: "100px", height:"fit-content" }}>
+      <div style={{ display: "flex", width: "100%", paddingTop: "20px", display: "flex", justifyContent: "center", paddingBottom: "100px", height: "fit-content" }}>
         <div
           style={{
             height: "fit-content",
@@ -169,7 +171,7 @@ const Home = () => {
             <div className={styles.bigTitle}>
               Lexmark XC 8160 Multifunction Printer
             </div>
-            <div style={{height:"100%"}} className={styles.row}>
+            <div style={{ height: "100%" }} className={styles.row}>
 
               <div>
                 <div className={styles.fourty}>
@@ -372,7 +374,7 @@ const Home = () => {
 
             <ReCAPTCHA
               style={{
-                padding:"20px",
+                padding: "20px",
                 marginBottom: "10px",
                 display: "flex",
                 justifyContent: "center",
@@ -383,12 +385,12 @@ const Home = () => {
             />
           </div>
           <button
-          className={styles.buttonBlue}
+            className={styles.buttonBlue}
             onClick={() => {
               props.quote();
               handleClick();
             }}
-            
+
           >
             Get My Free Quote
           </button>

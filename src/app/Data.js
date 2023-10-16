@@ -122,28 +122,20 @@ const Home = () => {
       <div className={styles.line}></div>
       <div className={styles.section}>
         <div className={styles.copierContainer}>
-          <h1 className={styles.bigTitle}>Lexmark XC 8160</h1>
+          <h1 className={styles.bigTitle}>Lexmark XC 4143</h1>
 
-          <Image alt={"lexmark 8160"} src={`/8160.webp`} width={200} height={300} />
+          <Image alt={"lexmark 4143"} src={`/8160.webp`} width={200} height={300} />
         </div>
         <div className={styles.centerMain}>
           <div className={styles.title}>
             Our Most Reliable Multifunction Copier
           </div>
-          <div
-            style={{
-              textAlign: "center",
-              fontSize: "18px",
-              margin: "15px",
-              lineHeight: "30px",
-            }}
-          >
-            The Lexmark 8160 is renowned for its exceptional reliability, making
-            it a top choice among printers. Its robust build and well-engineered
-            components ensure consistent and dependable performance, providing a
-            hassle-free printing experience for users.
+          <div>
+            <div>Print speeds at something per minute</div>
+            <div>Largest Print Size is something</div>
+            <div>First Page Out Time is 3 seconds</div>
+            <div>First Page Out Time is 3 seconds</div>
           </div>
-
           <div className={styles.fifty}>
             <button className={styles.button}>Lease Now</button>
           </div>
