@@ -472,6 +472,13 @@
     justify-content: flex-end;
     width: 80vw;
   }
+  .sectionReverse{
+    height: 50vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: 80vw;
+  }
   
   .lexmark {
     background-image: url("/static/Lexmark.webp");
