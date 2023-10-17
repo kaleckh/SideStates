@@ -256,7 +256,7 @@
     width: 50%;
   }
   .pic {
-    background-image: url("/static/office.webp");
+    background-image: url("/office.webp");
     width: 100vw;
     height: 73vh;
     background-repeat: no-repeat;
@@ -366,7 +366,13 @@
   }
   .copierRow{
     display: flex;
-    width: 80%;
+    width: 100%;
+    height: 60vh;
+      justify-content: space-evenly;
+  }
+  .copierRowThin{
+    display: flex;
+    width: 85%;
     height: 60vh;
       justify-content: space-evenly;
   }
@@ -590,11 +596,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 719px;
+    top: 1125px;
     width: 100%;
     height: 73%;
     background-color: rgba(0, 0, 0, 0.3);
 }
+
   .bottomProductContainer{
     display: flex;
     flex-direction: column;

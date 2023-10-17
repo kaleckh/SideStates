@@ -6,9 +6,9 @@ import Link from "next/link";
 // import Footer from "./footer/page";
 import Image from "next/image";
 import { PatternFormat } from "react-number-format";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 // import { useRouter } from "next/router";
-import Footer from './components/Footer'
+import Footer from '../components/Footer'
 import ReCAPTCHA from "react-google-recaptcha";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useState } from "react";
@@ -120,17 +120,16 @@ const Home = () => {
       </div>
 
       <div className={styles.line}></div>
-      <div className={styles.homePage}></div>
-      <div className={styles.sectionNormal}>
+      <div className={styles.section}>
         <div className={styles.copierContainer}>
-          <h1 className={styles.bigTitle}>Lexmark XC 6153</h1>
-
-          <Image alt={"lexmark 4143"} src={`/6153.webp`} width={300} height={250} />
+          <Image alt={"lexmark 8160"} src={`/9225.webp`} width={300} height={250} />
+          <div className={styles.rowSpace}>
+            <div className={styles.thick}>Model:</div>
+            <div>Lexmark XC6153</div>
+          </div>
         </div>
         <div className={styles.centerMain}>
-          <div className={styles.title}>
-            Our Most Reliable Multifunction Copier
-          </div>
+          <h1 className={styles.title}>Lexmark XC 9335</h1>
           <div className={styles.bulletPoint}>
             <div className={styles.flexCenter}>
               <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
@@ -153,102 +152,24 @@ const Home = () => {
               <div>Print speeds at something per minute</div>
             </div>
           </div>
+
           <div className={styles.fifty}>
-            <Link href={'/6153'}>
-              <button className={styles.button}>Lease Now</button>
-            </Link>
+            <button className={styles.button}>Lease Now</button>
           </div>
+        </div>
+      </div>
+      <div className={styles.center}>
+        <div className={styles.sectionSmall}>
+          <div>Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.</div>
+          <div>Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.</div>
         </div>
       </div>
       <div className={styles.center}>
         <div className={styles.lineSmall}></div>
       </div>
-      <div className={styles.sectionNormal}>
-        <div className={styles.copierContainer}>
-          <h1 className={styles.bigTitle}>Lexmark XC 8163</h1>
 
-          <Image alt={"lexmark 4143"} src={`/8163.webp`} width={300} height={250} />
-        </div>
-        <div className={styles.centerMain}>
-          <div className={styles.title}>
-            Our Most Reliable Multifunction Copier
-          </div>
-          <div className={styles.bulletPoint}>
-            <div className={styles.flexCenter}>
-              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>Print speeds at something per minute</div>
-            </div>
-            <div className={styles.flexCenter}>
-              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>largest Print size is</div>
-            </div>
-            <div className={styles.flexCenter}>
-              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>First page out time is</div>
-            </div>
-            <div className={styles.flexCenter}>
-              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>exceptional print quality with sharp text and vibrant images.</div>
-            </div>
-            <div className={styles.flexCenter}>
-              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>Print speeds at something per minute</div>
-            </div>
-          </div>
-          <div className={styles.fifty}>
-            <Link href={'/6153'}>
-              <button className={styles.button}>Lease Now</button>
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className={styles.center}>
-        <div className={styles.lineSmall}></div>
-      </div>
-      <div className={styles.sectionNormal}>
-        <div className={styles.copierContainer}>
-          <h1 className={styles.bigTitle}>Lexmark XC 9335</h1>
-
-          <Image alt={"lexmark 4143"} src={`/9225.webp`} width={300} height={250} />
-        </div>
-        <div className={styles.centerMain}>
-          <div className={styles.title}>
-            Our Most Reliable Multifunction Copier
-          </div>
-          <div className={styles.bulletPoint}>
-            <div className={styles.flexCenter}>
-              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>Print speeds at something per minute</div>
-            </div>
-            <div className={styles.flexCenter}>
-              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>largest Print size is</div>
-            </div>
-            <div className={styles.flexCenter}>
-              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>First page out time is</div>
-            </div>
-            <div className={styles.flexCenter}>
-              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>exceptional print quality with sharp text and vibrant images.</div>
-            </div>
-            <div className={styles.flexCenter}>
-              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>Print speeds at something per minute</div>
-            </div>
-          </div>
-          <div className={styles.fifty}>
-            <Link href={'/9335'}>
-              <button className={styles.button}>Lease Now</button>
-            </Link>
-          </div>
-        </div>
-        <div className={styles.center}>
-          <div className={styles.lineSmall}></div>
-        </div>
-      </div>
       <div className={styles.centerBox}>
-        <div style={{ paddingBottom: "10px" }} className={styles.title}>Our Select Reliable Choices</div>
+        <div style={{ paddingBottom: "10px" }} className={styles.titleThin}>Our Select Reliable Choices</div>
         <div className={styles.titleSmall}>(Our favorite options)</div>
         <div className={styles.grid}>
           <div className={styles.flex}>
@@ -258,9 +179,9 @@ const Home = () => {
                   Our Favorite Black And White option
                 </div>
                 <div>
-                  <Image alt={"lexmark xc62152"} src={"/8163.webp"} height={250} width={250} />
+                  <Image alt={"lexmark xc62152"} src={"/xc6152.webp"} height={250} width={250} />
                 </div>
-                <div className={styles.titleSmall}>Lexmark XC8163</div>
+                <div className={styles.titleSmall}>Lexmark XC6152</div>
                 <div className={styles.buttonContainer1}>
                   <Link className={styles.aFlex} href={"/6152"}>
                     <button className={styles.button1}>See Details</button>
@@ -275,11 +196,11 @@ const Home = () => {
                   Our Favorite Desktop Printer
                 </div>
                 <div>
-                  <Image alt={"lexmark xc8160"} src={'/9225.webp'} height={200} width={350} />
+                  <Image alt={"lexmark xc8160"} src={'/8160.webp'} height={250} width={200} />
                 </div>
-                <div className={styles.titleSmall}>Lexmark X9335</div>
+                <div className={styles.titleSmall}>Lexmark XC6152</div>
                 <div className={styles.buttonContainer1}>
-                  <Link href={"/9325"}>
+                  <Link href={"/6152"}>
                     <button className={styles.button1}>See Details</button>
                   </Link>
                 </div>
@@ -295,7 +216,7 @@ const Home = () => {
                 <div>
                   <Image alt={"lexmark xc6152"} src={"/xc6152.webp"} height={250} width={250} />
                 </div>
-                <div className={styles.titleSmall}>Lexmark XC6152</div>
+                <div className={styles.titleSmall}>Lexmark XC8163</div>
                 <div className={styles.buttonContainer1}>
                   <Link href={"/6152"}>
                     <button className={styles.button1}>See Details</button>
@@ -309,7 +230,7 @@ const Home = () => {
                   Our Favorite  And White Option
                 </div>
                 <div>
-                  <Image alt={"lexmark xc6152"} src={"/xc6152.webp"} height={250} width={250} />
+                  <Image alt={"lexmark xc6152"} src={"/8163.webp"} height={250} width={250} />
                 </div>
                 <div className={styles.titleSmall}>Lexmark XC6152</div>
                 <div className={styles.buttonContainer1}>

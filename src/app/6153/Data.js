@@ -123,6 +123,10 @@ const Home = () => {
       <div className={styles.section}>
         <div className={styles.copierContainer}>
           <Image alt={"lexmark 8160"} src={`/8160.webp`} width={200} height={300} />
+          <div className={styles.rowSpace}>
+            <div className={styles.thick}>Model:</div>
+            <div>Lexmark XC6153</div>
+          </div>
         </div>
         <div className={styles.centerMain}>
           <h1 className={styles.title}>Lexmark XC 6153</h1>
@@ -158,18 +162,15 @@ const Home = () => {
         <div className={styles.sectionSmall}>
           <div>Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.</div>
           <div>Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.</div>
+          <div>Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.</div>
         </div>
-      </div>
-      <div className={styles.titleMedSmall}>Specs And Other Options</div>
-      <div className={styles.center}>
-        <Image alt={"down arrow"} src={"/down-arrow-5.webp"} width={100} height={100} />
       </div>
       <div className={styles.center}>
         <div className={styles.lineSmall}></div>
       </div>
 
       <div className={styles.centerBox}>
-        <div style={{ paddingBottom: "10px" }} className={styles.title}>Our Select Reliable Choices</div>
+        <div style={{ paddingBottom: "10px" }} className={styles.titleThin}>Our Select Reliable Choices</div>
         <div className={styles.titleSmall}>(Our favorite options)</div>
         <div className={styles.grid}>
           <div className={styles.flex}>
@@ -216,7 +217,7 @@ const Home = () => {
                 <div>
                   <Image alt={"lexmark xc6152"} src={"/xc6152.webp"} height={250} width={250} />
                 </div>
-                <div className={styles.titleSmall}>Lexmark XC6152</div>
+                <div className={styles.titleSmall}>Lexmark XC8163</div>
                 <div className={styles.buttonContainer1}>
                   <Link href={"/6152"}>
                     <button className={styles.button1}>See Details</button>
@@ -230,7 +231,7 @@ const Home = () => {
                   Our Favorite  And White Option
                 </div>
                 <div>
-                  <Image alt={"lexmark xc6152"} src={"/xc6152.webp"} height={250} width={250} />
+                  <Image alt={"lexmark xc6152"} src={"/8163.webp"} height={250} width={250} />
                 </div>
                 <div className={styles.titleSmall}>Lexmark XC6152</div>
                 <div className={styles.buttonContainer1}>

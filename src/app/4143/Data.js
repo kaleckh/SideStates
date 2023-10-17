@@ -122,26 +122,35 @@ const Home = () => {
       <div className={styles.line}></div>
       <div className={styles.section}>
         <div className={styles.copierContainer}>
-          <h1 className={styles.bigTitle}>Lexmark XC 8160</h1>
-
-          <Image alt={"lexmark 8160"} src={`/8160.webp`} width={200} height={300} />
+          <Image alt={"lexmark 8160"} src={`/7355.webp`} width={350} height={250} />
+          <div className={styles.rowSpace}>
+            <div className={styles.thick}>Model:</div>
+            <div>Lexmark XC7335</div>
+          </div>
         </div>
         <div className={styles.centerMain}>
-          <div className={styles.title}>
-            Our Most Reliable Multifunction Copier
-          </div>
-          <div
-            style={{
-              textAlign: "center",
-              fontSize: "18px",
-              margin: "15px",
-              lineHeight: "30px",
-            }}
-          >
-            The Lexmark 8160 is renowned for its exceptional reliability, making
-            it a top choice among printers. Its robust build and well-engineered
-            components ensure consistent and dependable performance, providing a
-            hassle-free printing experience for users.
+          <h1 className={styles.title}>Lexmark XC 7335</h1>
+          <div className={styles.bulletPoint}>
+            <div className={styles.flexCenter}>
+              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
+              <div>Print speeds at something per minute</div>
+            </div>
+            <div className={styles.flexCenter}>
+              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
+              <div>largest Print size is</div>
+            </div>
+            <div className={styles.flexCenter}>
+              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
+              <div>First page out time is</div>
+            </div>
+            <div className={styles.flexCenter}>
+              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
+              <div>exceptional print quality with sharp text and vibrant images.</div>
+            </div>
+            <div className={styles.flexCenter}>
+              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
+              <div>Print speeds at something per minute</div>
+            </div>
           </div>
 
           <div className={styles.fifty}>
@@ -149,72 +158,19 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className={styles.titleMedSmall}>Specs And Other Options</div>
       <div className={styles.center}>
-        <Image alt={"down arrow"} src={"/down-arrow-5.webp"} width={100} height={100} />
+        <div className={styles.sectionSmall}>
+          <div>Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.</div>
+          <div>Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.</div>
+          <div>Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.</div>
+        </div>
       </div>
       <div className={styles.center}>
         <div className={styles.lineSmall}></div>
       </div>
-      <div style={{ display: "flex", width: "100%", paddingTop: "20px", display: "flex", justifyContent: "center", paddingBottom: "100px", height: "fit-content" }}>
-        <div
-          style={{
-            height: "fit-content",
-            width: "75%",
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-            justifyContent: "space-around",
-          }}
-        >
-          <div className={styles.column}>
-            <div className={styles.bigTitle}>
-              Lexmark XC 8160 Multifunction Printer
-            </div>
-            <div style={{ height: "100%" }} className={styles.row}>
 
-              <div>
-                <div className={styles.fourty}>
-                  <div className={styles.bulletContainer}>
-                    <Image className={styles.gap} alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
-                    <div className={styles.paragraphSmall}>
-                      Print speeds at {printSpeed} pages per minute!
-                    </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <Image className={styles.gap} alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
-                    <div className={styles.paragraphSmall}>
-                      Largest print size is {paperSize} inches
-                    </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <Image className={styles.gap} alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
-                    <div className={styles.paragraphSmall}>
-                      First page out time is {timeOut} seconds
-                    </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <Image className={styles.gap} alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
-                    <div className={styles.paragraphSmall}>{lastBullet}</div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <Image className={styles.gap} alt={"down arrow"} src={"/seen.webp"} width={25} height={25} />
-                    <div className={styles.paragraphSmall}>
-                      {almostLastBullet}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.copierContainer}>
-                <Image alt={"lexmark 8160"} src={`/8160.webp`} width={250} height={350} />
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
       <div className={styles.centerBox}>
-        <div style={{ paddingBottom: "10px" }} className={styles.title}>Our Select Reliable Choices</div>
+        <div style={{ paddingBottom: "10px" }} className={styles.titleThin}>Our Select Reliable Choices</div>
         <div className={styles.titleSmall}>(Our favorite options)</div>
         <div className={styles.grid}>
           <div className={styles.flex}>
@@ -261,7 +217,7 @@ const Home = () => {
                 <div>
                   <Image alt={"lexmark xc6152"} src={"/xc6152.webp"} height={250} width={250} />
                 </div>
-                <div className={styles.titleSmall}>Lexmark XC6152</div>
+                <div className={styles.titleSmall}>Lexmark XC8163</div>
                 <div className={styles.buttonContainer1}>
                   <Link href={"/6152"}>
                     <button className={styles.button1}>See Details</button>
@@ -275,7 +231,7 @@ const Home = () => {
                   Our Favorite  And White Option
                 </div>
                 <div>
-                  <Image alt={"lexmark xc6152"} src={"/xc6152.webp"} height={250} width={250} />
+                  <Image alt={"lexmark xc6152"} src={"/8163.webp"} height={250} width={250} />
                 </div>
                 <div className={styles.titleSmall}>Lexmark XC6152</div>
                 <div className={styles.buttonContainer1}>

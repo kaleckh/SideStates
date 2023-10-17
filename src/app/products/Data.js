@@ -109,6 +109,60 @@ const Products = () => {
               <button style={{ margin: "30px" }} className={styles.buttonBlue}>See Details</button>
             </div>
           </Link>
+          <Link href={'/4143'}>
+            <div
+              style={{ padding: "12px" }}
+              className={styles.copierContainer}
+
+            >
+              <h2 style={{ padding: "5px" }} className={styles.title}>Lexmark XC4143</h2>
+              <div className={styles.imageContainer}>
+                <Image alt={"A Konika Copier for Lease"} src={'/4143.webp'} fill={true} />
+              </div>
+              <button className={styles.buttonBlue}>See Details</button>
+            </div>
+          </Link>
+        </div>
+        <div className={styles.copierRowThin}>
+          <Link href={'/5255'}>
+            <div
+              style={{ padding: "12px" }}
+              className={styles.copierContainer}
+
+            >
+              <h2 style={{ padding: "5px" }} className={styles.title}>Lexmark XC5255</h2>
+              <div className={styles.imageContainer}>
+                <Image alt={"A Konika Copier for Lease"} src={'/5255.webp'} fill={true} />
+              </div>
+              <button className={styles.buttonBlue}>See Details</button>
+            </div>
+          </Link>
+          
+          <Link href={'/5365'}>
+            <div
+              style={{ padding: "12px" }}
+              className={styles.copierContainer}
+
+            >
+              <h2 style={{ padding: "5px" }} className={styles.title}>Lexmark XC5365</h2>
+              <div className={styles.imageContainer}>
+                <Image alt={"A Konika Copier for Lease"} src={'/5365.webp'} fill={true} />
+              </div>
+              <button className={styles.buttonBlue}>See Details</button>
+            </div>
+          </Link>
+          <Link href={'/9335'}>
+            <div
+              className={styles.copierContainer}
+
+            >
+              <h2 className={styles.title}>Lexmark XC 7355</h2>
+              <div className={styles.imageContainer}>
+                <Image alt={"A Epson Copiers for Lease  "} src={'/7355.webp'} fill={true} />
+              </div>
+              <button style={{ margin: "30px" }} className={styles.buttonBlue}>See Details</button>
+            </div>
+          </Link>
         </div>
         <div className={`${styles.fifty} ${styles.pic}`}>
           <div className={styles.overlay}>
