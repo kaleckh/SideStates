@@ -125,7 +125,7 @@ const Home = () => {
           <Image alt={"lexmark 8160"} src={`/9225.webp`} width={300} height={250} />
           <div className={styles.rowSpace}>
             <div className={styles.thick}>Model:</div>
-            <div>Lexmark XC6153</div>
+            <div>Lexmark XC9335</div>
           </div>
         </div>
         <div className={styles.centerMain}>
@@ -133,23 +133,19 @@ const Home = () => {
           <div className={styles.bulletPoint}>
             <div className={styles.flexCenter}>
               <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>Print speeds at something per minute</div>
+              <div>Print speeds at 25 pages per minute</div>
             </div>
             <div className={styles.flexCenter}>
               <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>largest Print size is</div>
+              <div>largest Print size is 12.6 x 18 in</div>
             </div>
             <div className={styles.flexCenter}>
               <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>First page out time is</div>
+              <div>First page out time is 7 seconds</div>
             </div>
             <div className={styles.flexCenter}>
               <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
               <div>exceptional print quality with sharp text and vibrant images.</div>
-            </div>
-            <div className={styles.flexCenter}>
-              <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>Print speeds at something per minute</div>
             </div>
           </div>
 

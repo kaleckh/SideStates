@@ -151,7 +151,7 @@ const Products = () => {
               <button className={styles.buttonBlue}>See Details</button>
             </div>
           </Link>
-          <Link href={'/9335'}>
+          <Link href={'/7335'}>
             <div
               className={styles.copierContainer}
 
