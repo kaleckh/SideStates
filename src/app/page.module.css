@@ -181,11 +181,25 @@
   font-weight: 500;
   padding: 10px;
 }
+.titleRow {
+  color: black;
+  display: flex;
+  font-size: 35px;
+  font-weight: 500;
+  padding: 10px;
+}
 .titleThin {
   color: black;
   font-size: 35px;
   font-weight: 400;
   padding: 10px;
+}
+.centerMain div{
+  color: rgb(85,85,85);
+}
+.blue{
+  color: rgb(1,45,82);
+  padding-left: 5px;
 }
 .titleForm {
   color: rgb(85,85,85);
@@ -299,8 +313,44 @@
   text-align: center;
   border-radius: 10px;
 }
+.homeBox{
+  width: 500px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-evenly;
+  background-color: rgb(147, 196, 242);
+}
+.titleBox{
+  font-size: 25px;
+  font-weight: 700;
+  border-bottom: 3px;
+}
+.paragraphBox{
+  font-size: 20px;
+  line-height: 30px;
+}
+.homeBox div{
+  color: black;
+  
+}
+.flexSomething {
+  display: flex;
+  background-image: url("/hompage.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  align-items: center;
+  height: 80vh;
+  justify-content: space-evenly;
+  width: 100%;
+}
 .homePage{
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .sectionSmall{
   height: 300px;
@@ -316,6 +366,12 @@
 }
 .flex{
   display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+}
+.flexLarge{
+  display: flex;
+  width: 80%;
 }
 .flexCenter{
   display: flex;
@@ -693,7 +749,18 @@
   align-items: center;
   padding: 66px;
   width: 150%;
-  
+}
+.sectionColumn {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 66px;
+}
+.centerHor{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .eighty{
   width: 80%;
@@ -813,9 +880,7 @@
   justify-content: space-evenly;
   
 }
-.centerMain div{
-  color: rgb(85,85,85);
-}
+
 
 .infoSmall {
   color: black;

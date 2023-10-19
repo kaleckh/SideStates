@@ -119,8 +119,20 @@ const Home = () => {
         </div>
       </div>
 
+
       <div className={styles.line}></div>
-      <div className={styles.homePage}></div>
+      <div className={styles.flexSomething}>
+        <div className={styles.homeBox}>
+          <div className={styles.titleBox}>
+            Make Every Print Count
+          </div>
+          <div className={styles.paragraphBox}>
+            Introducing the top quality copiers with full warranties all toner included for the life of your lease
+          </div>
+          <button className={styles.button1}>Lease Today</button>
+        </div>
+        <Image alt={"lexmark 4143"} src={`/manCartoon.png`} width={450} height={300} />
+      </div>
       <div className={styles.sectionNormal}>
         <div className={styles.copierContainer}>
           <h1 className={styles.bigTitle}>Lexmark XC 6153</h1>
@@ -128,8 +140,9 @@ const Home = () => {
           <Image alt={"lexmark 4143"} src={`/6153.webp`} width={300} height={250} />
         </div>
         <div className={styles.centerMain}>
-          <div className={styles.title}>
-            Our Most Reliable Multifunction Copier
+          <div className={styles.titleRow}>
+            Our Most Reliable 
+            <div className={styles.blue}>Multifunction Copier</div>            
           </div>
           <div className={styles.bulletPoint}>
             <div className={styles.flexCenter}>
@@ -234,6 +247,59 @@ const Home = () => {
         <div className={styles.center}>
           <div className={styles.lineSmall}></div>
         </div>
+      </div>
+      <div className={styles.sectionColumn}>
+        <div>
+          Take Our Quiz And See Our Reccomended Copiers For
+        </div>
+        <div className={styles.flexLarge}>
+          <div>
+            <div className={styles.row}>
+              <input
+                placeholder="How Many Copiers?"
+                type="number"
+              />
+              <div>Quantity</div>
+            </div>
+          </div>
+          <div className={styles.centerHor}>
+            <div>
+              <div className={styles.row}>
+                <input
+                  placeholder="Enter Full Name"
+                  type="checkbox"
+                />
+                <div>Black & white </div>
+              </div>
+              <div className={styles.row}>
+                <input
+                  placeholder="Enter Full Name"
+                  type="checkbox"
+                />
+                <div>Color</div>
+              </div>
+            </div>
+            <div>
+              <div className={styles.row}>
+                <input
+                  placeholder="Enter Full Name"
+                  type="checkbox"
+                />
+                <div>11 x 17 needed </div>
+              </div>
+              <div className={styles.row}>
+                <input
+                  placeholder="Enter Full Name"
+                  type="checkbox"
+                />
+                <div>Letter And Legal</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
       </div>
       <div className={styles.centerBox}>
         <div style={{ paddingBottom: "10px" }} className={styles.title}>Our Select Reliable Choices</div>
