@@ -17,6 +17,16 @@ const Home = () => {
   const tawkMessengerRef = useRef();
   const [gray, setGray] = useState(true);
   const [grayBottom, setGrayBottom] = useState(true);
+  const [desktopNumber, setDesktopNumber] = useState(0);
+  const [desktopBlack, setDesktopBlack] = useState(0);
+  const [desktopColor, setDesktopColor] = useState(0);
+  const [desktopEleven, setDesktopEleven] = useState(0);
+  const [desktopLegal, setDesktopLegal] = useState(0);
+  const [standingNumber, setStandingNumber] = useState(0);
+  const [standingBlack, setStandingBlack] = useState(0);
+  const [standingColor, setStandingColor] = useState(0);
+  const [standingEleven, setStandingEleven] = useState(0);
+  const [standingLegal, setStandingLegal] = useState(0);
   const [brandDescription, setBrandDescription] = useState();
   const [quote, setQuote] = useState(false);
   const [model, setModel] = useState();
@@ -141,8 +151,8 @@ const Home = () => {
         </div>
         <div className={styles.centerMain}>
           <div className={styles.titleRow}>
-            Our Most Reliable 
-            <div className={styles.blue}>Multifunction Copier</div>            
+            Our Most Reliable
+            <div className={styles.blue}>Multifunction Copier</div>
           </div>
           <div className={styles.bulletPoint}>
             <div className={styles.flexCenter}>
@@ -249,53 +259,182 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.sectionColumn}>
-        <div>
-          Take Our Quiz And See Our Reccomended Copiers For
+        <div className={styles.sentence}>
+          Take Our Quiz And See Our Reccomended Copiers For You
         </div>
         <div className={styles.flexLarge}>
-          <div>
-            <div className={styles.row}>
-              <input
-                placeholder="How Many Copiers?"
+          <div style={{ width: "25%" }}>
+            <div className={styles.column}>
+              <div className={styles.smallTitle}>Floor Standing Copiers</div>
+              <input className={styles.inputSingle}
+
+                onChange={() => {
+                  setStandingNumber(event.target.value)
+                }}
+                placeholder="How Many?"
                 type="number"
               />
-              <div>Quantity</div>
+
             </div>
           </div>
           <div className={styles.centerHor}>
-            <div>
-              <div className={styles.row}>
-                <input
-                  placeholder="Enter Full Name"
-                  type="checkbox"
-                />
-                <div>Black & white </div>
+            <div className={styles.smallColumn}>
+              <div>
+                <div className={styles.titleSmal}>Black & white </div>
+                <div className={styles.row}>
+                  <div className={styles.pointer} onClick={() => {
+                    if (standingBlack + standingColor < standingNumber) {
+                      setStandingBlack(standingBlack + 1)
+                    }
+                  }}>+</div>
+                  <div className={styles.space}>{standingBlack}</div>
+                  <div className={styles.pointer} onClick={() => {
+                    if (standingBlack > 0) {
+                      setStandingBlack(standingBlack - 1)
+                    }
+                  }}>-</div>
+                </div>
               </div>
-              <div className={styles.row}>
-                <input
-                  placeholder="Enter Full Name"
-                  type="checkbox"
-                />
-                <div>Color</div>
+              <div>
+                <div className={styles.titleSmal}>Color </div>
+                <div className={styles.row}>
+                  <div className={styles.pointer} onClick={() => {
+                    if (standingBlack + standingColor < standingNumber) {
+                      setStandingColor(standingColor + 1)
+                    }
+                  }}>+</div>
+                  <div className={styles.space}>{standingColor}</div>
+                  <div className={styles.pointer} onClick={() => {
+                    if (standingColor > 0) {
+                      setStandingColor(standingColor - 1)
+                    }
+                  }}>-</div>
+                </div>
               </div>
             </div>
-            <div>
-              <div className={styles.row}>
-                <input
-                  placeholder="Enter Full Name"
-                  type="checkbox"
-                />
-                <div>11 x 17 needed </div>
+            <div className={styles.line}></div>
+            <div className={styles.smallColumn}>
+              <div>
+                <div className={styles.titleSmal}>11 x 17 needed </div>
+                <div className={styles.row}>
+                  <div className={styles.pointer} onClick={() => {
+                    if (standingEleven + standingLegal < standingNumber) {
+                      setStandingEleven(standingEleven + 1)
+                    }
+                  }}>+</div>
+                  <div className={styles.space}>{standingEleven}</div>
+                  <div className={styles.pointer} onClick={() => {
+                    if (standingEleven > 0) {
+                      setStandingEleven(standingEleven - 1)
+                    }
+                  }}>-</div>
+                </div>
               </div>
-              <div className={styles.row}>
-                <input
-                  placeholder="Enter Full Name"
-                  type="checkbox"
-                />
-                <div>Letter And Legal</div>
+              <div>
+                <div className={styles.titleSmal}>Letter and Legal </div>
+                <div className={styles.row}>
+                  <div className={styles.pointer} onClick={() => {
+                    if (standingEleven + standingLegal < standingNumber) {
+                      setStandingLegal(standingLegal + 1)
+                    }
+                  }}>+</div>
+                  <div className={styles.space}>{standingLegal}</div>
+                  <div className={styles.pointer} onClick={() => {
+                    if (standingLegal > 0) {
+                      setStandingLegal(standingLegal - 1)
+                    }
+                  }}>-</div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        <div className={styles.flexLarge}>
+          <div style={{ width: "25%" }}>
+            <div className={styles.column}>
+              <div className={styles.smallTitle}>Desktop Copiers</div>
+              <input className={styles.inputSingle}
+                onChange={() => {
+                  setStandingNumber(event.target.value)
+                }}
+                placeholder="How Many?"
+                type="number"
+              />
+
+            </div>
+          </div>
+          <div className={styles.centerHor}>
+            <div className={styles.smallColumn}>
+              <div>
+                <div className={styles.titleSmal}>Black & white </div>
+                <div className={styles.row}>
+                  <div className={styles.pointer} onClick={() => {
+                    if (desktopBlack + desktopColor < standingNumber) {
+                      setDesktopBlack(desktopBlack + 1)
+                    }
+                  }}>+</div>
+                  <div className={styles.space}>{desktopBlack}</div>
+                  <div className={styles.pointer} onClick={() => {
+                    if (desktopBlack > 0) {
+                      setDesktopBlack(desktopBlack - 1)
+                    }
+                  }}>-</div>
+                </div>
+              </div>
+              <div>
+                <div className={styles.titleSmal}>Color </div>
+                <div className={styles.row}>
+                  <div className={styles.pointer} onClick={() => {
+                    if (desktopBlack + desktopColor < standingNumber) {
+                      setDesktopColor(desktopColor + 1)
+                    }
+                  }}>+</div>
+                  <div className={styles.space}>{desktopColor}</div>
+                  <div className={styles.pointer} onClick={() => {
+                    if (desktopColor > 0) {
+                      setDesktopColor(desktopColor - 1)
+                    }
+                  }}>-</div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.line}></div>
+            <div className={styles.smallColumn}>
+              <div>
+                <div className={styles.titleSmal}>11 x 17 needed </div>
+                <div className={styles.row}>
+                  <div className={styles.pointer} onClick={() => {
+                    if (desktopEleven + desktopLegal < standingNumber) {
+                      setDesktopEleven(desktopEleven + 1)
+                    }
+                  }}>+</div>
+                  <div className={styles.space}>{desktopEleven}</div>
+                  <div className={styles.pointer} onClick={() => {
+                    if (desktopEleven > 0) {
+                      setDesktopEleven(desktopEleven - 1)
+                    }
+                  }}>-</div>
+                </div>
+              </div>
+              <div>
+                <div className={styles.titleSmal}>Letter and legal </div>
+                <div className={styles.row}>
+                  <div className={styles.pointer} onClick={() => {
+                    if (desktopEleven + desktopLegal < standingNumber) {
+                      setDesktopLegal(desktopLegal + 1)
+                    }
+                  }}>+</div>
+                  <div className={styles.space}>{desktopLegal}</div>
+                  <div className={styles.pointer} onClick={() => {
+                    if (desktopLegal > 0) {
+                      setDesktopLegal(desktopLegal - 1)
+                    }
+                  }}>-</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button>Get Results</button>
         </div>
 
 
@@ -378,7 +517,7 @@ const Home = () => {
       </div>
       <div className={styles.centerBoxRow}>
         <div className={styles.container}>
-          <div className={styles.titleForm}>Get Your free Quote Today!</div>
+          <h2 className={styles.black}>Get Your free Quote!</h2>
           <div
             style={{
               width: "100%",
@@ -390,79 +529,65 @@ const Home = () => {
             }}
           >
             <div className={styles.space}>
-              <div className={styles.formContainer}>
-                <div className={styles.titleSmall}>Full Name</div>
 
-                <input
-                  className={styles.inputSingle}
-                  placeholder="Enter Full Name"
-                  type="text"
-                  name=""
-                  id=""
-                  required={true}
-                  onChange={() => {
-                    setName(event.target.value);
-                  }}
-                />
-
-              </div>
-              <div className={styles.formContainer}>
-                <div className={styles.titleSmall}>Phone Number</div>
-                <input
-                  className={styles.inputSingle}
-                  type="tel"
-                  name="telphone"
-                  placeholder="Full Phone Number"
-                  pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-                  maxLength="12"
-                  title="Ten digits code"
-                  onChange={() => {
-                    setNumber(event.target.value);
-                  }}
-                  required
-                />
-              </div>
-            </div>
-            <div className={styles.spaceBottom}>
-              <div>
-                <div className={styles.titleSmall}>Email</div>
-                <input className={styles.inputSingle} placeholder={"Enter Full Email"} type="text" />
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", width: "50%", paddingLeft: "10px" }}>
-                <div className={styles.row}>
-                  <input className={styles.circle} type="checkbox" />
-                  <div className={styles.titleSmallNo}>Call</div>
-                </div>
-                <div className={styles.row}>
-                  <input className={styles.circle} type="checkbox" />
-                  <div className={styles.titleSmallNo}>Email</div>
-                </div>
-
-
-              </div>
-            </div>
-
-            <div style={{ width: "80%" }}>
-              <div className={styles.titleSmall}>Message</div>
               <input
-                onChange={() => {
-                  setMessage(event.target.value);
-                }}
-                className={styles.inputSingleFull}
-                placeholder="Full Message"
+                style={{ outline: "none", backgroundColor: "transparent", border: "1px solid rgb(210,210,210)", borderRadius: "5px", padding: "15px", width: "90%", margin:"5px" }}
+
+                className={styles.inputSingle}
+                placeholder="Full name"
                 type="text"
+                name=""
+                id=""
+                required={true}
+              // onChange={() => {
+              //   setName(event.target.value);
+              // }}
+              />
+              <input
+                style={{ outline: "none", backgroundColor: "transparent", border: "1px solid rgb(210,210,210)", borderRadius: "5px", padding: "15px", width: "90%", margin:"5px" }}
+                className={styles.inputSingle}
+                placeholder="Email"
+                type="text"
+                name=""
+                id=""
+                required={true}
+              // onChange={() => {
+              //   setEmail(event.target.value);
+              // }}
+              />
+            </div>
+            <div className={styles.space}>
+
+              <PatternFormat
+                format="+1 (###) ### ####"
+                allowEmptyFormatting
+                mask="_"
+                className={styles.phoneNumber}
+                onChange={(event) => {
+                  setNumber(event.target.value);
+                }}
               />
             </div>
 
+            <div className={styles.space}>
+
+              <input
+                style={{ outline: "none", backgroundColor: "transparent", border: "1px solid rgb(210,210,210)", borderRadius: "5px", padding: "15px", width: "90%" }}
+                onChange={() => {
+                  setMessage(event.target.value);
+                }}
+                className={styles.inputSingle}
+                placeholder="Comments"
+                type="text"
+              />
+            </div>
           </div>
           <div
             style={{ height: "25%", display: "flex" }}
             className={styles.padding}
           >
-
             <ReCAPTCHA
               style={{
-                padding: "20px",
                 marginBottom: "10px",
                 display: "flex",
                 justifyContent: "center",
@@ -470,17 +595,18 @@ const Home = () => {
               className="recaptcha"
               sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
               ref={captchaRef}
+              onChange={verifyCallback}
             />
           </div>
           <button
-            className={styles.buttonBlue}
-            onClick={() => {
-              props.quote();
-              handleClick();
+            onClick={(e) => {
+              // setQuoteToggle(!quoteToggle);
+              // sendEmail(e);
             }}
-
+            className={styles.buttonBlue}
+          // disabled={!toggle}
           >
-            Get My Free Quote
+            Get My Quote
           </button>
         </div>
         <Image alt={"handshake"} src={'/handshake.webp'} height={600} width={500} />
