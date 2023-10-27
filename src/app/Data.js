@@ -12,21 +12,26 @@ import Footer from './components/Footer'
 import ReCAPTCHA from "react-google-recaptcha";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useState } from "react";
+import { devIndicators } from "../../next.config";
 const Home = () => {
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const tawkMessengerRef = useRef();
   const [gray, setGray] = useState(true);
   const [grayBottom, setGrayBottom] = useState(true);
-  const [desktopNumber, setDesktopNumber] = useState(0);
-  const [desktopBlack, setDesktopBlack] = useState(0);
-  const [desktopColor, setDesktopColor] = useState(0);
-  const [desktopEleven, setDesktopEleven] = useState(0);
-  const [desktopLegal, setDesktopLegal] = useState(0);
-  const [standingNumber, setStandingNumber] = useState(0);
-  const [standingBlack, setStandingBlack] = useState(0);
-  const [standingColor, setStandingColor] = useState(0);
-  const [standingEleven, setStandingEleven] = useState(0);
-  const [standingLegal, setStandingLegal] = useState(0);
+  // const [copiers, setCopiers] = useState([
+  //   { name: "XM9145", style: "11x17", size: "standing" }, { name: "XM7355", style: "Letter and Legal", size: "standing" }, {}, {}
+  // ]);
+  const [copierChoice, setCopierChoice] = useState()
+  const [desktopNumber, setDesktopNumber] = useState(false);
+  const [desktopBlack, setDesktopBlack] = useState(false);
+  const [desktopColor, setDesktopColor] = useState(false);
+  const [desktopEleven, setDesktopEleven] = useState(false);
+  const [desktopLegal, setDesktopLegal] = useState(false);
+  const [standingNumber, setStandingNumber] = useState(false);
+  const [standingBlack, setStandingBlack] = useState(false);
+  const [standingColor, setStandingColor] = useState(false);
+  const [standingEleven, setStandingEleven] = useState(false);
+  const [standingLegal, setStandingLegal] = useState(false);
   const [brandDescription, setBrandDescription] = useState();
   const [quote, setQuote] = useState(false);
   const [model, setModel] = useState();
@@ -139,7 +144,7 @@ const Home = () => {
           <div className={styles.paragraphBox}>
             Introducing the top quality copiers with full warranties all toner included for the life of your lease
           </div>
-          <button className={styles.button1}>Lease Today</button>
+          <button className={styles.buttonBlue}>Lease Today</button>
         </div>
         <Image alt={"lexmark 4143"} src={`/manCartoon.png`} width={450} height={300} />
       </div>
@@ -259,196 +264,192 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.sectionColumn}>
-        <div className={styles.sentence}>
+        <div style={{ padding: "8px" }} className={styles.sentence}>
           Take Our Quiz And See Our Reccomended Copiers For You
         </div>
-        <div className={styles.flexLarge}>
-          <div style={{ width: "25%" }}>
-            <div className={styles.column}>
-              <div className={styles.smallTitle}>Floor Standing Copiers</div>
-              <input className={styles.inputSingle}
+        <div> Check which options you wanna see!</div>
+        <div className={styles.rowButton}>
+          <div className={styles.rowNormal}>
+            <div className={styles.flexLarge}>
+              <div style={{ width: "25%" }}>
+                <div className={styles.column}>
+                  <div className={styles.smallTitle}>Floor Standing Copiers</div>
+                  <input className={styles.inputSingle}
+                    onClick={() => {
+                      setStandingNumber(!standingNumber)
+                    }}
+                    type="checkbox"
+                  />
 
-                onChange={() => {
-                  setStandingNumber(event.target.value)
-                }}
-                placeholder="How Many?"
-                type="number"
-              />
+                </div>
+              </div>
 
-            </div>
-          </div>
-          <div className={styles.centerHor}>
-            <div className={styles.smallColumn}>
-              <div>
-                <div className={styles.titleSmal}>Black & white </div>
-                <div className={styles.row}>
-                  <div className={styles.pointer} onClick={() => {
-                    if (standingBlack + standingColor < standingNumber) {
-                      setStandingBlack(standingBlack + 1)
-                    }
-                  }}>+</div>
-                  <div className={styles.space}>{standingBlack}</div>
-                  <div className={styles.pointer} onClick={() => {
-                    if (standingBlack > 0) {
-                      setStandingBlack(standingBlack - 1)
-                    }
-                  }}>-</div>
-                </div>
-              </div>
-              <div>
-                <div className={styles.titleSmal}>Color </div>
-                <div className={styles.row}>
-                  <div className={styles.pointer} onClick={() => {
-                    if (standingBlack + standingColor < standingNumber) {
-                      setStandingColor(standingColor + 1)
-                    }
-                  }}>+</div>
-                  <div className={styles.space}>{standingColor}</div>
-                  <div className={styles.pointer} onClick={() => {
-                    if (standingColor > 0) {
-                      setStandingColor(standingColor - 1)
-                    }
-                  }}>-</div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.line}></div>
-            <div className={styles.smallColumn}>
-              <div>
-                <div className={styles.titleSmal}>11 x 17 needed </div>
-                <div className={styles.row}>
-                  <div className={styles.pointer} onClick={() => {
-                    if (standingEleven + standingLegal < standingNumber) {
-                      setStandingEleven(standingEleven + 1)
-                    }
-                  }}>+</div>
-                  <div className={styles.space}>{standingEleven}</div>
-                  <div className={styles.pointer} onClick={() => {
-                    if (standingEleven > 0) {
-                      setStandingEleven(standingEleven - 1)
-                    }
-                  }}>-</div>
-                </div>
-              </div>
-              <div>
-                <div className={styles.titleSmal}>Letter and Legal </div>
-                <div className={styles.row}>
-                  <div className={styles.pointer} onClick={() => {
-                    if (standingEleven + standingLegal < standingNumber) {
-                      setStandingLegal(standingLegal + 1)
-                    }
-                  }}>+</div>
-                  <div className={styles.space}>{standingLegal}</div>
-                  <div className={styles.pointer} onClick={() => {
-                    if (standingLegal > 0) {
-                      setStandingLegal(standingLegal - 1)
-                    }
-                  }}>-</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.flexLarge}>
-          <div style={{ width: "25%" }}>
-            <div className={styles.column}>
-              <div className={styles.smallTitle}>Desktop Copiers</div>
-              <input className={styles.inputSingle}
-                onChange={() => {
-                  setStandingNumber(event.target.value)
-                }}
-                placeholder="How Many?"
-                type="number"
-              />
+              <div className={styles.centerHor}>
+                <div className={styles.smallColumn}>
+                  <div>
+                    <div className={styles.titleSmal}>Black & white </div>
+                    <div className={styles.row}>
+                      <input onClick={() => {
+                        setStandingBlack(!standingBlack)
+                      }}
+                        type="checkbox"></input>
+                    </div>
+                  </div>
 
+<div className={styles.line}></div>
+
+                  <div>
+                    <div className={styles.titleSmal}>11 x 17 needed </div>
+                    <div className={styles.row}>
+                      <input onChange={() => {
+                        setStandingEleven(!standingEleven)
+                      }} type='checkbox'></input>
+
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.smallColumn}>
+                  <div>
+                    <div className={styles.titleSmal}>Color </div>
+                    <div className={styles.row}>
+                      <input onClick={() => {
+                        setStandingColor(!standingColor)
+                      }} type="checkbox"></input>
+                    </div>
+                  </div>                  
+                  <div>
+                    <div className={styles.titleSmal}>Letter and Legal </div>
+                    <div className={styles.row}>
+                      <input onClick={() => {
+                        setStandingLegal(!standingLegal)
+                      }} type="checkbox"></input>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.flexLarge}>
+              <div style={{ width: "25%" }}>
+                <div className={styles.column}>
+                  <div className={styles.smallTitle}>Desktop Copiers</div>
+                  <input className={styles.inputSingle}
+                    onChange={() => {
+                      setDesktopNumber(!desktopNumber)
+                    }}
+                    placeholder="How Many?"
+                    type="checkbox"
+                  />
+
+                </div>
+              </div>
+              <div className={styles.centerHor}>
+                <div className={styles.smallColumn}>
+                  <div>
+                    <div className={styles.titleSmal}>Black & white </div>
+                    <div className={styles.row}>
+                      <input onClick={() => {
+                        setDesktopBlack(!desktopBlack)
+                      }} type="checkbox"></input>
+                    </div>
+                  </div>
+                  <div>
+                    <div className={styles.titleSmal}>Color </div>
+                    <div className={styles.row}>
+                      <input onClick={() => {
+                        setDesktopColor(!desktopColor)
+                      }} type="checkbox"></input>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={styles.smallColumn}>
+                  <div>
+                    <div className={styles.titleSmal}>11 x 17 needed </div>
+                    <div className={styles.row}>
+                      <input onClick={() => {
+                        setDesktopEleven(!desktopEleven)
+                      }} type='checkbox'></input>
+                    </div>
+                  </div>
+                  <div>
+                    <div className={styles.titleSmal}>Letter and legal </div>
+                    <div className={styles.row}>
+                      <input onClick={() => {
+                        setDesktopLegal(!desktopLegal)
+                      }} type='checkbox'></input>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className={styles.centerHor}>
-            <div className={styles.smallColumn}>
-              <div>
-                <div className={styles.titleSmal}>Black & white </div>
-                <div className={styles.row}>
-                  <div className={styles.pointer} onClick={() => {
-                    if (desktopBlack + desktopColor < standingNumber) {
-                      setDesktopBlack(desktopBlack + 1)
-                    }
-                  }}>+</div>
-                  <div className={styles.space}>{desktopBlack}</div>
-                  <div className={styles.pointer} onClick={() => {
-                    if (desktopBlack > 0) {
-                      setDesktopBlack(desktopBlack - 1)
-                    }
-                  }}>-</div>
-                </div>
-              </div>
-              <div>
-                <div className={styles.titleSmal}>Color </div>
-                <div className={styles.row}>
-                  <div className={styles.pointer} onClick={() => {
-                    if (desktopBlack + desktopColor < standingNumber) {
-                      setDesktopColor(desktopColor + 1)
-                    }
-                  }}>+</div>
-                  <div className={styles.space}>{desktopColor}</div>
-                  <div className={styles.pointer} onClick={() => {
-                    if (desktopColor > 0) {
-                      setDesktopColor(desktopColor - 1)
-                    }
-                  }}>-</div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.line}></div>
-            <div className={styles.smallColumn}>
-              <div>
-                <div className={styles.titleSmal}>11 x 17 needed </div>
-                <div className={styles.row}>
-                  <div className={styles.pointer} onClick={() => {
-                    if (desktopEleven + desktopLegal < standingNumber) {
-                      setDesktopEleven(desktopEleven + 1)
-                    }
-                  }}>+</div>
-                  <div className={styles.space}>{desktopEleven}</div>
-                  <div className={styles.pointer} onClick={() => {
-                    if (desktopEleven > 0) {
-                      setDesktopEleven(desktopEleven - 1)
-                    }
-                  }}>-</div>
-                </div>
-              </div>
-              <div>
-                <div className={styles.titleSmal}>Letter and legal </div>
-                <div className={styles.row}>
-                  <div className={styles.pointer} onClick={() => {
-                    if (desktopEleven + desktopLegal < standingNumber) {
-                      setDesktopLegal(desktopLegal + 1)
-                    }
-                  }}>+</div>
-                  <div className={styles.space}>{desktopLegal}</div>
-                  <div className={styles.pointer} onClick={() => {
-                    if (desktopLegal > 0) {
-                      setDesktopLegal(desktopLegal - 1)
-                    }
-                  }}>-</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button>Get Results</button>
+          <button className={styles.buttonBlueSmall} onClick={() => {
+            let result = []
+            if (standingNumber === true && standingBlack === true & standingEleven === true) {
+              result.push({ Type: "XM9145", Image: "9145.webp", size: "Standing", paper: "11 x 17", color: "Black & White", route: "9145" })
+            }
+            if (standingNumber === true && standingBlack === true & standingLegal === true) {
+              result.push({ Type: "XM7335", Image: "/7355.webp", size: "Standing", paper: "Letter and Legal", color: "Black & White", route: '7335' })
+            }
+            if (standingNumber === true && standingColor === true & standingLegal === true) {
+              result.push({ Type: "XC9335", Image: "9335.webp", size: "Standing", paper: "Letter and Legal", color: "Color", route: '9355' })
+            }
+            if (standingNumber === true && standingColor === true & standingEleven === true) {
+              result.push({ Type: "XC8163", Image: "/8163.webp", size: "Standing", paper: "11 x 17", color: "Color", route: '8163' })
+            }
+            if (desktopNumber === true && desktopColor === true & desktopLegal === true) {
+              result.push({ Type: "XM4140", Image: "/4140.webp", size: "Desktop", paper: "Letter and Legal", color: "Color", route: '4140' })
+            }
+            if (desktopNumber === true && desktopBlack === true & desktopLegal === true) {
+              result.push({ Type: "XC5365", Image: "5365.webp", size: "Desktop", paper: "Letter and Legal", color: "Black & White", route: '5365' })
+            }
+
+            setCopierChoice(result)
+          }}>Get Results</button>
         </div>
 
 
+        {copierChoice ?
+          <div className={styles.gridLarge}>
+            {copierChoice.map((item) => {
+              return (
+                <div className={styles.boxContainerRow}>
+                  <div className={styles.boxRow}>
+                    <div className={styles.titleMed}>
+
+                    </div>
+                    <div>
+                      <Image alt={"lexmark xc62152"} src={`${item.Image}`} height={120} width={120} />
+                    </div>
+                    <div className={styles.titleSmall}>Lexmark {item.Type}</div>
+                    <div className={styles.buttonContainer1}>
+                      <Link className={styles.aFlex} href={item.route}>
+                        <button className={styles.buttonBlue}>See Details</button>
+                      </Link>
+                    </div>
+                    <div className={styles.rowSmall}>
+                      <div>* {item.size}</div>
+                      <div>* {item.paper}</div>
+                    </div>
+                    <div>
+                      <div>* {item.color}</div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div> : null}
 
       </div>
       <div className={styles.centerBox}>
         <div style={{ paddingBottom: "10px" }} className={styles.title}>Our Select Reliable Choices</div>
         <div className={styles.titleSmall}>(Our favorite options)</div>
         <div className={styles.grid}>
-          <div className={styles.flex}>
+          <div>
             <div className={styles.boxContainer}>
               <div className={styles.box}>
                 <div className={styles.titleMed}>
-                  Our Favorite Black And White option
+                  Favorite Black And White option
                 </div>
                 <div>
                   <Image alt={"lexmark xc62152"} src={"/8163.webp"} height={250} width={250} />
@@ -456,7 +457,7 @@ const Home = () => {
                 <div className={styles.titleSmall}>Lexmark XC8163</div>
                 <div className={styles.buttonContainer1}>
                   <Link className={styles.aFlex} href={"/6152"}>
-                    <button className={styles.button1}>See Details</button>
+                    <button className={styles.buttonBlue}>See Details</button>
                   </Link>
                 </div>
               </div>
@@ -465,7 +466,7 @@ const Home = () => {
             <div className={styles.boxContainer}>
               <div className={styles.box}>
                 <div className={styles.titleMed}>
-                  Our Favorite Desktop Printer
+                  Favorite Desktop Printer
                 </div>
                 <div>
                   <Image alt={"lexmark xc8160"} src={'/9225.webp'} height={200} width={350} />
@@ -473,13 +474,13 @@ const Home = () => {
                 <div className={styles.titleSmall}>Lexmark X9335</div>
                 <div className={styles.buttonContainer1}>
                   <Link href={"/9325"}>
-                    <button className={styles.button1}>See Details</button>
+                    <button className={styles.buttonBlue}>See Details</button>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
-          <div className={styles.flex}>
+          <div>
             <div className={styles.boxContainer}>
               <div className={styles.box}>
                 <div className={styles.titleMed}>
@@ -491,7 +492,7 @@ const Home = () => {
                 <div className={styles.titleSmall}>Lexmark XC6152</div>
                 <div className={styles.buttonContainer1}>
                   <Link href={"/6152"}>
-                    <button className={styles.button1}>See Details</button>
+                    <button className={styles.buttonBlue}>See Details</button>
                   </Link>
                 </div>
               </div>
@@ -507,7 +508,7 @@ const Home = () => {
                 <div className={styles.titleSmall}>Lexmark XC6152</div>
                 <div className={styles.buttonContainer1}>
                   <Link href={"/6152"}>
-                    <button className={styles.button1}>See Details</button>
+                    <button className={styles.buttonBlue}>See Details</button>
                   </Link>
                 </div>
               </div>
@@ -531,7 +532,7 @@ const Home = () => {
             <div className={styles.space}>
 
               <input
-                style={{ outline: "none", backgroundColor: "transparent", border: "1px solid rgb(210,210,210)", borderRadius: "5px", padding: "15px", width: "90%", margin:"5px" }}
+                style={{ outline: "none", backgroundColor: "transparent", border: "1px solid rgb(210,210,210)", borderRadius: "5px", padding: "15px", width: "90%", margin: "5px" }}
 
                 className={styles.inputSingle}
                 placeholder="Full name"
@@ -544,7 +545,7 @@ const Home = () => {
               // }}
               />
               <input
-                style={{ outline: "none", backgroundColor: "transparent", border: "1px solid rgb(210,210,210)", borderRadius: "5px", padding: "15px", width: "90%", margin:"5px" }}
+                style={{ outline: "none", backgroundColor: "transparent", border: "1px solid rgb(210,210,210)", borderRadius: "5px", padding: "15px", width: "90%", margin: "5px" }}
                 className={styles.inputSingle}
                 placeholder="Email"
                 type="text"

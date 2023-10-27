@@ -11,6 +11,7 @@
 }
 .smallTitle{
   font-size: 23px;
+  padding-bottom: 10px;
 }
 .space{
   font-size: 18px;
@@ -228,7 +229,7 @@
 }
 .titleSmall {
   color: rgb(85,85,85);
-  font-size: 23px;
+  font-size: 21px;
   padding-bottom: 5px;
   border-radius: 5px;
   transition: all .2s ease-in-out;
@@ -388,7 +389,9 @@
 }
 .flexLarge{
   display: flex;
-  width: 85%;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
 }
 .flexCenter{
   display: flex;
@@ -558,6 +561,7 @@
 .inputSingle{
   width: 100%;
   outline: none;
+  margin: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 15px;
@@ -611,13 +615,14 @@
   border: 1px solid rgb(210,210,210);
   padding: 10px;
   border-radius: 5px;
-  width: 90%;
+  width: 9
+  0%;
   font-size: 20px;
 }
 .buttonBlue {
   appearance: none;
-  color: rgb(2,50,92);
-  background-color: white;
+  color: white;
+  background-color: rgb(2,50,92);
   border: 1px solid rgb(2,50,92);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
@@ -639,6 +644,35 @@
   vertical-align: middle;
   white-space: nowrap;
 }
+.buttonBlueSmall {
+  appearance: none;
+  color: rgb(2,50,92);
+  background-color: white;
+  border: 1px solid rgb(2,50,92);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 100px;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  height: 70px;
+  width: 130px;
+  padding: 10px;
+  
+}
+.buttonBlue:hover{
+  background-color: white;
+  color: rgb(2,50,92);
+  transition: .3s all ease-in-out;
+}
+.buttonBlueSmall:hover{
+  background-color: rgb(2,50,92);
+  color: white;
+  transition: .3s all ease-in-out;
+}
 .row {
   display: flex;
   padding: 5px;
@@ -646,6 +680,25 @@
   justify-content: center;
   height: 40px; 
 }
+.rowNormal {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.rowButton{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+.rowSmall{
+  display: flex;
+  justify-content: space-evenly;
+  width: 95%;
+  align-items: center;
+}
+
 .rowSpace {
   display: flex;
   padding: 5px;
@@ -674,6 +727,26 @@
   width: 500px;
   border-radius: 10px;
   height: 500px;
+  margin-top: 20px;
+  padding: 10px;
+  justify-content: space-evenly;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.boxContainerRow{
+  height: fit-content;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.boxRow{
+  width: 300px;
+  border-radius: 10px;
+  height: 300px;
   margin-top: 20px;
   padding: 10px;
   justify-content: space-evenly;
@@ -743,7 +816,6 @@
   display: flex;
   height: fit-content;
   flex-direction: column;
-  padding-bottom: 100px;
   align-items: center;
   justify-content: space-evenly;
   
@@ -775,7 +847,6 @@
 .centerBoxRow{
   display: flex;
   height: fit-content;
-  padding-top: 100px;
   padding-bottom: 100px;
   align-items: center;
   justify-content: space-evenly;
@@ -799,7 +870,8 @@
   width: 150%;
 }
 .sectionColumn {
-  height: 600px;
+  height: fit-content;
+  min-height: 750px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -879,7 +951,7 @@
 }
 .line {
   height: 1px;
-  width: 50%;
+  width: 75%;
   position: absolute;
   background-color: rgb(218, 221, 233);
 }
@@ -906,9 +978,14 @@
   width: 100%;
 }
 .grid {
- display: flex;
- flex-direction: column;
- align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 100px;
+}
+.gridLarge {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 
