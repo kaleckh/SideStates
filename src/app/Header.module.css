@@ -80,6 +80,11 @@
   height: 100%;
   will-change: transform;
 }
+.cartContainer{
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
 .buttonSmall {
   appearance: none;
   border: 1px solid rgb(160, 160, 160);

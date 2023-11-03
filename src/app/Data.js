@@ -50,6 +50,11 @@ const Home = () => {
   const onLoad = () => {
     console.log("onLoad works!");
   };
+
+  useEffect(() => {
+    console.log(JSON.parse(localStorage.getItem("copierChoice")), "this is parsed info")
+    setCopierChoice(JSON.parse(localStorage.getItem("copierChoice"))) 
+  }, [])
   var verifyCallback = function (response) {
     setRecaptchaResponse(response);
   };
@@ -125,6 +130,7 @@ const Home = () => {
                 <div className={styles.titleSmallHeader}>Our Models</div>
               </Link>
               <div className={styles.titleSmallHeader}>About Us</div>
+              <div className={styles.titleSmallHeader}>Cart</div>
             </div>
             <div className={styles.mediumColumn}>
               <div className={styles.infoSmall}>info@copiersutah.com</div>
@@ -385,6 +391,7 @@ const Home = () => {
           </div>
           <button className={styles.buttonBlueSmall} onClick={() => {
             let result = []
+            
             if (standingNumber === true && standingBlack === true & standingEleven === true) {
               result.push({ Type: "XM9145", Image: "9145.webp", size: "Standing", paper: "11 x 17", color: "Black & White", route: "9145" })
             }
@@ -392,7 +399,7 @@ const Home = () => {
               result.push({ Type: "XM7335", Image: "/7355.webp", size: "Standing", paper: "Letter and Legal", color: "Black & White", route: '7335' })
             }
             if (standingNumber === true && standingColor === true & standingLegal === true) {
-              result.push({ Type: "XC9335", Image: "9335.webp", size: "Standing", paper: "Letter and Legal", color: "Color", route: '9355' })
+              result.push({ Type: "XC9335", Image: "9335.webp", size: "Standing", paper: "Letter and Legal", color: "Color", route: '9335' })
             }
             if (standingNumber === true && standingColor === true & standingEleven === true) {
               result.push({ Type: "XC8163", Image: "/8163.webp", size: "Standing", paper: "11 x 17", color: "Color", route: '8163' })
@@ -403,9 +410,11 @@ const Home = () => {
             if (desktopNumber === true && desktopBlack === true & desktopLegal === true) {
               result.push({ Type: "XC5365", Image: "5365.webp", size: "Desktop", paper: "Letter and Legal", color: "Black & White", route: '5365' })
             }
-
+          
             setCopierChoice(result)
-          }}>Get Results</button>
+            // console.log(JSON.stringify(result), "this is important info")
+            JSON.stringify(localStorage.setItem("copierChoice", JSON.stringify(result)))  
+          }}>Get Result</button>
         </div>
 
 

@@ -1,7 +1,8 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-// import Header from "./header/page";
+import Header from "../components/Header";
 import Head from "next/head";
+import BreadCrumbs from "../components/Breadcrumbs";
 import Link from "next/link";
 // import Footer from "./footer/page";
 import Image from "next/image";
@@ -16,6 +17,7 @@ const Home = () => {
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const tawkMessengerRef = useRef();
   const [gray, setGray] = useState(true);
+  const [cartAccess, setCartAccess] = useState(true);
   const [grayBottom, setGrayBottom] = useState(true);
   const [brandDescription, setBrandDescription] = useState();
   const [quote, setQuote] = useState(false);
@@ -80,6 +82,9 @@ const Home = () => {
       );
     }
   }, []);
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+  ]
 
   return (
     <div className={styles.main}>
@@ -91,36 +96,8 @@ const Home = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            alt={"copiers arizona"}
-            src={`/logo.webp`}
-
-            width={270}
-            height={270}
-          />
-          <div className={styles.columnContainer}>
-            <div />
-            <div className={styles.rowHead}>
-              <Link href={'/'}>
-                <div className={styles.titleSmallHeader}>Home</div>
-              </Link>
-              <Link href={'/products'}>
-                <div className={styles.titleSmallHeader}>Our Models</div>
-              </Link>
-              <div className={styles.titleSmallHeader}>About Us</div>
-            </div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.line}></div>
+      <Header/>
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.section}>
         <div className={styles.copierContainer}>
           <Image alt={"lexmark 8160"} src={`/8160.webp`} width={200} height={300} />
@@ -150,9 +127,36 @@ const Home = () => {
             </div>
           </div>
 
-          <div className={styles.fifty}>
+          {/* <div className={styles.fifty}>
             <button className={styles.button}>Lease Now</button>
-          </div>
+          </div> */}
+          <Link href={"/cart"}>
+                <button className={styles.button3}>
+                  {cartAccess ? (
+                    <div
+                      onClick={() => {
+                        const updatedCart = [
+                          ...cart,
+                          {
+                            name: toner.name,
+                            oem: toner.oem,
+                            price: toner.price,
+                            quantity: quantity,
+                            image: toner.image,
+                          },
+                        ];
+                        setCart(updatedCart);
+                        // JSON.stringify(`localStorage`.setItem("cart", updatedCart))
+
+                      }}
+                    >
+                      Add To Cart
+                    </div>
+                  ) : (
+                      <div>Already Added</div>
+                    )}
+                </button>
+              </Link>
         </div>
       </div>
       <div className={styles.center}>

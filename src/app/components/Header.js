@@ -7,7 +7,8 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <div className={styles.logoSpaceContainer}>
+    <>
+      <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
           <Image
             alt={"copiers arizona"}
@@ -20,12 +21,21 @@ export default function Header() {
             <div />
             <div className={styles.rowHead}>
               <Link href={'/'}>
-                  <div className={styles.titleSmallHeader}>Home</div>
+                <div className={styles.titleSmallHeader}>Home</div>
               </Link>
               <Link href={'/products'}>
                 <div className={styles.titleSmallHeader}>Our Models</div>
               </Link>
               <div className={styles.titleSmallHeader}>About Us</div>
+              <div className={styles.cartContainer}>
+                <Link href={'/cart'}>
+                  <Image
+                    src="/cart.webp"
+                    alt="buy a used or new business copier"
+                    fill={true}
+                  />
+                </Link>
+              </div>
             </div>
             <div className={styles.mediumColumn}>
               <div className={styles.infoSmall}>info@copiersutah.com</div>
@@ -33,7 +43,8 @@ export default function Header() {
             </div>
           </div>
         </div>
-        
       </div>
+      <div className={styles.line}></div>
+    </>
   );
 }
