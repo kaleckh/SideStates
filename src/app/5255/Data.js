@@ -127,7 +127,7 @@ const Home = () => {
           </div>
 
           <div className={styles.fifty}>
-            <button className={styles.button}>Lease Now</button>
+            <button className={styles.button}>Add To Cart</button>
           </div>
         </div>
       </div>

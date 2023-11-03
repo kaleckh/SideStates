@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-// import Header from "./header/page";
+import Header from "./components/Header";
 import Head from "next/head";
 import Link from "next/link";
 // import Footer from "./footer/page";
@@ -110,37 +110,7 @@ const Home = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            alt={"copiers arizona"}
-            src={`/logo.webp`}
-
-            width={270}
-            height={270}
-          />
-          <div className={styles.columnContainer}>
-            <div />
-            <div className={styles.rowHead}>
-              <Link href={'/'}>
-                <div className={styles.titleSmallHeader}>Home</div>
-              </Link>
-              <Link href={'/products'}>
-                <div className={styles.titleSmallHeader}>Our Models</div>
-              </Link>
-              <div className={styles.titleSmallHeader}>About Us</div>
-              <div className={styles.titleSmallHeader}>Cart</div>
-            </div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
+    <Header/>
       <div className={styles.line}></div>
       <div className={styles.flexSomething}>
         <div className={styles.homeBox}>
@@ -222,7 +192,7 @@ const Home = () => {
             </div>
           </div>
           <div className={styles.fifty}>
-            <Link href={'/6153'}>
+            <Link href={'/8163'}>
               <button className={styles.button}>Lease Now</button>
             </Link>
           </div>
@@ -233,7 +203,7 @@ const Home = () => {
       </div>
       <div className={styles.sectionNormal}>
         <div className={styles.copierContainer}>
-          <h1 className={styles.bigTitle}>Lexmark XC 9225</h1>
+          <h1 className={styles.bigTitle}>Lexmark XC 9335</h1>
 
           <Image alt={"lexmark 4143"} src={`/9225.webp`} width={300} height={250} />
         </div>

@@ -251,12 +251,7 @@ const Cart = () => {
                                     <div style={{ width: "100px", fontSize: "15px" }}>${total}</div>
                                 </div>
                             </div>
-                            <div className={styles.buttonContainterB}>
-                                <Link href={'/toner'}>
-                                    <button onClick={() => { }} className={styles.buttonCheck}>
-                                        Add More Items
-                                    </button>
-                                </Link>
+                            <div className={styles.buttonContainterB}>                                
                                 <Link href={'/checkout'}>
                                     <button onClick={() => {
                                         localStorage.setItem("total", total)
@@ -267,15 +262,14 @@ const Cart = () => {
                                     </button>
                                 </Link>
                             </div>
-                        </div>
-                    </div>
-                    <div className={styles.boxContainer}>
+                        </div>     
+                        <div className={styles.line}></div>                                   
                         <div className={styles.box}>
                             <div className={styles.title}>Or Contact Us</div>
                                 <input className={styles.input} placeholder="First Name"/>
                                 <input className={styles.input} placeholder="Phone Number"/>
                                 <input className={styles.input} placeholder="Email"/>
-                        </div>
+                        </div>                    
                     </div>
                 </div>
             </div>

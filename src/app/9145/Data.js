@@ -127,36 +127,10 @@ const Home = () => {
             </div>
           </div>
 
-          {/* <div className={styles.fifty}>
-            <button className={styles.button}>Lease Now</button>
-          </div> */}
-          <Link href={"/cart"}>
-                <button className={styles.button3}>
-                  {cartAccess ? (
-                    <div
-                      onClick={() => {
-                        const updatedCart = [
-                          ...cart,
-                          {
-                            name: toner.name,
-                            oem: toner.oem,
-                            price: toner.price,
-                            quantity: quantity,
-                            image: toner.image,
-                          },
-                        ];
-                        setCart(updatedCart);
-                        // JSON.stringify(`localStorage`.setItem("cart", updatedCart))
-
-                      }}
-                    >
-                      Add To Cart
-                    </div>
-                  ) : (
-                      <div>Already Added</div>
-                    )}
-                </button>
-              </Link>
+          <div className={styles.fifty}>
+            <button className={styles.button}>Add To Cart</button>
+          </div>
+          
         </div>
       </div>
       <div className={styles.center}>
