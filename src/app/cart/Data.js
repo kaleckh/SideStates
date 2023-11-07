@@ -5,15 +5,16 @@ import Image from "next/image";
 import Head from "next/head";
 import styles from "../styles/cart.module.css";
 import Link from "next/link";
+import { CartContext } from "../../providers/queue/data";
 import BreadCrumbs from "../components/Breadcrumbs";
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
-const Cart = () => {
+const Cart = (props) => {
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [name, setName] = useState("");
     const [orderId, setOrderId] = useState("");
-    // const { cart, setCart, cartLook, setRealPrice, tonerOem } = useContext(CartContext);
+    const { queue, setQueue } = useContext(CartContext);
     const [noChange, setFalse] = useState(false);
     const [something, setSomething] = useState(false);
     const [price, setPrice] = useState("");
