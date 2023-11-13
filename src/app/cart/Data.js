@@ -13,11 +13,12 @@ import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 const Cart = (props) => {
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [name, setName] = useState("");
-    const [orderId, setOrderId] = useState("");
-    const { queue, setQueue } = useContext(CartContext);
+    const [localQueue, setLocalQueue] = useState("");
+    const { cart, setCart } = useContext(CartContext);
     const [noChange, setFalse] = useState(false);
     const [something, setSomething] = useState(false);
     const [price, setPrice] = useState("");
+    const [realPrice, setRealPrice] = useState("");
     const [total, setTotal] = useState(0);
     const [newPrice, setNewPrice] = useState("");
     const [number, setNumber] = useState("");
@@ -29,6 +30,8 @@ const Cart = (props) => {
         const data = await response.json();
         window.location.replace(data.redirect);
     }
+
+
 
 
     const sendEmail = (e) => {
@@ -104,7 +107,7 @@ const Cart = (props) => {
     // }, [cart])
 
     const breadCrumbs = [
-        { name: "Home", url: "/" },    
+        { name: "Home", url: "/" },
     ]
 
     return (
@@ -123,120 +126,121 @@ const Cart = (props) => {
             <div className={styles.bottomMain}>
                 <div className={styles.hundred}>
                     <div className={styles.mainTitleBig}>Your Shopping Cart</div>
-                    {/* {cart.length === 0 ? (
-                        <div style={{ color: "black", textAlign: "center", paddingTop: "25px"}}>Your cart is empty</div>
+                    {cart?.length === 0 ? (
+                        <div style={{ color: "black", textAlign: "center", paddingTop: "25px" }}>Your cart is empty</div>
                     ) : (
-                            <div style={{ color: "black" }}></div>
-                        )}
-                    {cart?.map((toner, index) => {
+                        <div style={{ color: "black" }}></div>
+                    )}
+                    {cart?.map((item, index) => {
                         return (
                             <div key={index} className={styles.thirdSection}>
                                 <div>
-                                <div
-                                                style={{ color: "black", cursor: "pointer", textAlign:"end", width:"93%" }}
-                                                onClick={() => {
-                                                    setCart(cart.filter((t) => t.oem !== toner.oem));
-                                                }}
-                                            >
-                                                X
-                      </div>
+                                    <div
+                                        style={{ color: "black", cursor: "pointer", textAlign: "end", width: "93%" }}
+                                    onClick={() => {                                        
+                                        setCart(cart.filter((c) => item.title !== c.title));
+                                    }}
+                                    >
+                                        X
+                                    </div>
                                     <div className={styles.buggy}>
-                                        <div style={{width:"200px"}}>
-                                            <Image src={toner.image} width={150} height={150}/>
+                                        <div style={{ width: "200px" }}>
+                                            <Image src={item.image} width={150} height={150} />
+                                        </div>
+                                        <div className={styles.priceBox}>
+                                            <div className={styles.cartTitle}>{item.name}</div>
+                                            <div
+                                                className={styles.oemContainer}
+                                            >
+                                                <div
+                                                    style={{
+                                                        color: "black",
+                                                        fontSize: "15px",
+                                                        fontWeight: "600",
+                                                        paddingRight: "8px",
+                                                    }}
+                                                >
+                                                    Lexmark
+                                                </div>
+                                                <div style={{ color: "black", fontSize: "14px" }}>
+                                                    {" "}
+                                                    {item.title}
+                                                </div>
                                             </div>
-                                    <div className={styles.priceBox}>
-                                        <div className={styles.cartTitle}>{toner.name}</div>
-                                        <div
-                                            className={styles.oemContainer}
-                                        >
+                                        </div>
+                                        <div className={styles.cartRow}>
                                             <div
                                                 style={{
-                                                    color: "black",
-                                                    fontSize: "15px",
-                                                    fontWeight: "600",
-                                                    paddingRight: "8px",
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                    justifyContent: "center",
+                                                    width: "100px"
                                                 }}
                                             >
-                                                OEM:
-                                    </div>
-                                            <div style={{ color: "black", fontSize: "14px" }}>
-                                                {" "}
-                                                {toner.oem}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className={styles.cartRow}>
-                                        <div
-                                            style={{
-                                                display: "flex",
-                                                alignItems: "center",
-                                                justifyContent: "center",
-                                                width:"100px"
-                                            }}
-                                        >
-                                            <div 
-                                                onClick={() => {
-                                                    setTotal(0)
-                                                    setCart(
+                                                <div
+                                                    onClick={() => {
+                                                        // setTotal(0)
+                                                        setCart(
 
-                                                        cart.map((t) => {
-                                                            if (t.oem === toner.oem && t.quantity >= 1) {
-                                                                return {
-                                                                    ...t,
-                                                                    quantity: t.quantity - 1,
-                                                                };
-                                                            }
-                                                            return t;
-                                                        })
-                                                    );
-                                                }}
-                                                className={styles.plusButton}
-                                                style={{
-                                                    color: "black",
-                                                    fontSize: "23px",
-                                                    fontWeight: "300",
-                                                }}
-                                            >
-                                                -
-                                </div>
-                                            <div style={{ color: "black", padding: "5px" }}>
-                                                {toner.quantity}
-                                            </div>
-                                                <div style={{ color: "black", cursor:"pointer"}}
-                                                onClick={() => {
-                                                    setTotal(0)
-                                                    setCart(
+                                                            cart.map((t) => {
+                                                                if (t.title === item.title && t.quantity >= 1) {
+                                                                    return {
+                                                                        ...t,
+                                                                        quantity: t.quantity - 1,
+                                                                    };
+                                                                }
+                                                                return t;
+                                                            })
+                                                        );
+                                                    }}
+                                                    className={styles.plusButton}
+                                                    style={{
+                                                        color: "black",
+                                                        fontSize: "23px",
+                                                        fontWeight: "300",
+                                                    }}
+                                                >
+                                                    -
+                                                </div>
+                                                <div style={{ color: "black", padding: "5px" }}>
+                                                    {item.quantity}
+                                                </div>
+                                                <div style={{ color: "black", cursor: "pointer" }}
+                                                    onClick={() => {
+                                                        // setTotal(0)
+                                                        setCart(
 
-                                                        cart.map((t) => {
-                                                            if (t.oem === toner.oem) {
-                                                                return {
-                                                                    ...t,
-                                                                    quantity: t.quantity + 1,
-                                                                };
-                                                            }
-                                                            return t;
-                                                        })
-                                                    );
-                                                }}
-                                                className={styles.plusButton}>
-                                                
+                                                            cart.map((t) => {
+                                                                if (t.title === item.title) {
+                                                                    return {
+                                                                        ...t,
+                                                                        quantity: t.quantity + 1,
+                                                                    };
+                                                                }
+                                                                return t;
+                                                            })
+                                                        );
+                                                    }}
+                                                    className={styles.plusButton}>
+
                                                     +
-                                                
+
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className={styles.removeBox}>
-                                  
-                                            <div className={styles.priceRight}>
-                                                ${decimal(toner.price * toner.quantity)}
+                                            <div className={styles.removeBox}>
+
+                                                <div className={styles.priceRight}>
+                                                    {/* ${decimal(item.price * item.quantity)} */}
+                                                    ${item.price * item.quantity}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 </div>
                                 <div className={styles.line}></div>
                             </div>
                         );
-                    })} */}
+                    })}
                 </div>
                 <div className={styles.column}>
                     <div className={styles.boxContainer}>
@@ -252,7 +256,7 @@ const Cart = (props) => {
                                     <div style={{ width: "100px", fontSize: "15px" }}>${total}</div>
                                 </div>
                             </div>
-                            <div className={styles.buttonContainterB}>                                
+                            <div className={styles.buttonContainterB}>
                                 <Link href={'/checkout'}>
                                     <button onClick={() => {
                                         localStorage.setItem("total", total)
@@ -263,14 +267,14 @@ const Cart = (props) => {
                                     </button>
                                 </Link>
                             </div>
-                        </div>     
-                        <div className={styles.line}></div>                                   
+                        </div>
+                        <div className={styles.line}></div>
                         <div className={styles.box}>
                             <div className={styles.title}>Or Contact Us</div>
-                                <input className={styles.input} placeholder="First Name"/>
-                                <input className={styles.input} placeholder="Phone Number"/>
-                                <input className={styles.input} placeholder="Email"/>
-                        </div>                    
+                            <input className={styles.input} placeholder="First Name" />
+                            <input className={styles.input} placeholder="Phone Number" />
+                            <input className={styles.input} placeholder="Email" />
+                        </div>
                     </div>
                 </div>
             </div>

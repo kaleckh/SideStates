@@ -1,8 +1,9 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import Header from "../components/Header";
 import Head from "next/head";
 import Link from "next/link";
+import { CartContext } from "../../providers/queue/data";
 import BreadCrumbs from "../components/Breadcrumbs";
 // import Footer from "./footer/page";
 import Image from "next/image";
@@ -17,19 +18,10 @@ const Home = () => {
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const tawkMessengerRef = useRef();
   const [gray, setGray] = useState(true);
-  const [grayBottom, setGrayBottom] = useState(true);
-  const [brandDescription, setBrandDescription] = useState();
-  const [quote, setQuote] = useState(false);
-  const [model, setModel] = useState();
-  const [description, setDescription] = useState();
-  const [image, setImage] = useState();
-  const [type, setType] = useState();
-  const [timeOut, setTimeOut] = useState();
-  const [printSpeed, setPrintSpeed] = useState();
-  const [paperSize, setpaperSize] = useState();
-  const [modelNumber, setModelNumber] = useState();
-  const [lastBullet, setLastBullet] = useState();
-  const [almostLastBullet, setAlmostLastBullet] = useState();
+  const [title, setTitle] = useState("4143");
+  const { cart, setCart } = useContext(CartContext);
+  const [toggle, setToggle] = useState(true)
+
   const handleMinimize = () => {
     tawkMessengerRef.current.minimize();
   };
@@ -41,44 +33,11 @@ const Home = () => {
   };
   const captchaRef = useRef(null);
   useEffect(() => {
-    const storedModel = localStorage.getItem("Model");
-    const photo = localStorage.getItem("Image");
-    const time = localStorage.getItem("timeOut");
-    const back = localStorage.getItem("type");
-    const speed = localStorage.getItem("PagesPerMinute");
-    const modelNumber = localStorage.getItem("modelNumber");
-    const paperSize = localStorage.getItem("paperSize");
-    const desc = localStorage.getItem("description");
-    setModel(storedModel);
-    setImage(photo);
-    setType(back);
-    setPrintSpeed(speed);
-    setModelNumber(modelNumber);
-    setpaperSize(paperSize);
-    setTimeOut(time);
-    setDescription(desc);
-
-    if (localStorage.getItem("brand") === "lexmark") {
-      setBrandDescription(
-        "Lexmark, formerly an IBM company, had produced hands down the most reliable machines ever built. Their modular construction ensures the most efficient paper path in the industry. Independent BLI testing proved their top copier models performing with only 1 jam after 1,000,000 copies tested. Their dominant 85% of the market share in pharmacuetical and medical establishments is a testament to their unrivaled reliability"
-      );
-      setLastBullet(
-        " Known for their fast print speeds and efficient performance."
-      );
-      setAlmostLastBullet(
-        "Durability and reliability: Lexmark copiers are built to withstand heavy use and are known for their reliability, reducing downtime and ensuring consistent performance."
-      );
-    } else if (localStorage.getItem("brand") !== "lexmark") {
-      setLastBullet(
-        "High-quality output: Konica Minolta copiers are known for delivering exceptional print quality with sharp text and vibrant images."
-      );
-      setBrandDescription(
-        "Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers."
-      );
-      setAlmostLastBullet(
-        "Energy efficiency: Konica Minolta copiers are designed with energy-saving features, helping businesses reduce their environmental footprint and save on energy costs."
-      );
-    }
+    cart.map((item) => {
+      if (item.title === title) {
+        setToggle(false)
+      }
+    })
   }, []);
   const breadCrumbs = [
     { name: "Home", url: "/" },
@@ -96,7 +55,7 @@ const Home = () => {
         />
       </div>
 
-      <Header/>
+      <Header />
       <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.section}>
         <div className={styles.copierContainer}>
@@ -124,11 +83,19 @@ const Home = () => {
             <div className={styles.flexCenter}>
               <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
               <div>exceptional print quality with sharp text and vibrant images.</div>
-            </div>          
+            </div>
           </div>
 
           <div className={styles.fifty}>
-            <button className={styles.button}>Add To Cart</button>
+            {toggle ? <Link href={'/cart'}>
+              <button onClick={() => {
+                const updatedCart = [
+                  ...cart,
+                  { title: "4143", price: 10, id: 1, image:"/4143.webp", quantity:5 }
+                ]
+                setCart(updatedCart)                
+              }} className={styles.button}>Add To Cart</button>
+            </Link> : <button className={styles.button}>Already In Cart</button>}
           </div>
         </div>
       </div>

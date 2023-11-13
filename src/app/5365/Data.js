@@ -1,7 +1,8 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import Header from "../components/Header";
 import Head from "next/head";
+import { CartContext } from "../../providers/queue/data";
 import Link from "next/link";
 import BreadCrumbs from "../components/Breadcrumbs";
 // import Footer from "./footer/page";
@@ -21,6 +22,7 @@ const Home = () => {
   const [brandDescription, setBrandDescription] = useState();
   const [quote, setQuote] = useState(false);
   const [model, setModel] = useState();
+  const { cart, setCart } = useContext(CartContext);
   const [description, setDescription] = useState();
   const [image, setImage] = useState();
   const [type, setType] = useState();
@@ -94,7 +96,7 @@ const Home = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-      <Header/>
+      <Header />
       <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.section}>
         <div className={styles.copierContainer}>
@@ -126,7 +128,15 @@ const Home = () => {
           </div>
 
           <div className={styles.fifty}>
-            <button className={styles.button}>Add To Cart</button>
+            <Link href={'/cart'}>
+              <button onClick={() => {
+                const updatedCart = [
+                  ...cart,
+                  { title: "5365", price: "", id: 1, image: "/5365.webp" }
+                ]
+                setCart(updatedCart)
+              }} className={styles.button}>Add To Cart</button>
+            </Link>
           </div>
         </div>
       </div>

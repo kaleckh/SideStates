@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import Header from "../components/Header";
 import Head from "next/head";
 import BreadCrumbs from "../components/Breadcrumbs";
+import { CartContext } from "../../providers/queue/data";
 import Link from "next/link";
 // import Footer from "./footer/page";
 import Image from "next/image";
@@ -24,6 +25,7 @@ const Home = () => {
   const [model, setModel] = useState();
   const [description, setDescription] = useState();
   const [image, setImage] = useState();
+  const { queue, setQueue } = useContext(CartContext);
   const [type, setType] = useState();
   const [timeOut, setTimeOut] = useState();
   const [printSpeed, setPrintSpeed] = useState();
@@ -60,7 +62,7 @@ const Home = () => {
     setDescription(desc);
 
     if (localStorage.getItem("brand") === "lexmark") {
-        
+
       setBrandDescription(
         "Lexmark, formerly an IBM company, had produced hands down the most reliable machines ever built. Their modular construction ensures the most efficient paper path in the industry. Independent BLI testing proved their top copier models performing with only 1 jam after 1,000,000 copies tested. Their dominant 85% of the market share in pharmacuetical and medical establishments is a testament to their unrivaled reliability"
       );
@@ -96,7 +98,7 @@ const Home = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-      <Header/>
+      <Header />
       <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.section}>
         <div className={styles.copierContainer}>
@@ -128,9 +130,13 @@ const Home = () => {
           </div>
 
           <div className={styles.fifty}>
-            <button className={styles.button}>Add To Cart</button>
+            <Link href={'/cart'}>
+              <button onClick={() => {
+                setQueue([...queue, { title: "4143", price: "" }])
+              }} className={styles.button}>Add To Cart</button>
+            </Link>
           </div>
-          
+
         </div>
       </div>
       <div className={styles.center}>
