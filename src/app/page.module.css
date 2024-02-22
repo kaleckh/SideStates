@@ -1120,6 +1120,15 @@
 }
 
 @media (max-width: 750px) {
+  .centerBoxColumn{
+    padding: 0px;
+  }
+  .paragraphContainerMed{
+    width: 90%;
+  }
+  .paragraphNo{
+    font-size: 18px;
+  }
   .konika {
     height: 36vh;
   }
@@ -1133,6 +1142,27 @@
   .bulletContainer {
     padding: 8px;
   }
+  .footerChoicesContainer{
+    padding-left: 0px;
+  }
+  .mobileNone{
+    display: none;
+  }
+  .sectionNormal{
+    flex-direction: column;
+    height: fit-content;
+  }
+  .copierContainer{
+    height: 400px;
+    width: 350px;
+  }
+  .footerChoice{
+    font-size: 14px;
+  }
+  .footerTitle{
+    font-size: 18px;
+  }
+  
 }
 @media (max-width: 650px) {
   .columnContainer {
@@ -1147,7 +1177,7 @@
     font-size: 20px;
   }
   .title{
-    font-size: 20px;
+    font-size: 25px;
     
   }
   .row{
@@ -1164,6 +1194,42 @@
   .container {
     width: 85vw;
   }
+  .grid{
+    grid-template-columns: 1fr;
+  }
+  .box{
+    height: 450px;
+    width: 400px;
+  }
+  .titleMed{
+    font-size: 20px;
+  }
+  .space{
+    width: 88%;
+  }
+  .gridLarge{
+    grid-template-columns: auto;
+  }
+  .sectionNormal{
+    padding: 0px;
+  }
+  .centerMain{
+    width: 90%;
+  }
+  .homeBox{
+    width: 400px;
+  }
+  .copierContainer{
+    margin-top: 20px;
+  }
+  .centerMain{
+    align-items: center;
+  }
+  .fifty{
+    width: 40%;
+    margin: 10px;
+  }
+
 }
 
 @media (max-width: 550px) {

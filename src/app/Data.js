@@ -53,7 +53,7 @@ const Home = () => {
 
   useEffect(() => {
     console.log(JSON.parse(localStorage.getItem("copierChoice")), "this is parsed info")
-    setCopierChoice(JSON.parse(localStorage.getItem("copierChoice"))) 
+    setCopierChoice(JSON.parse(localStorage.getItem("copierChoice")))
   }, [])
   var verifyCallback = function (response) {
     setRecaptchaResponse(response);
@@ -110,7 +110,7 @@ const Home = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-    <Header/>
+      <Header />
       <div className={styles.line}></div>
       <div className={styles.flexSomething}>
         <div className={styles.homeBox}>
@@ -122,7 +122,9 @@ const Home = () => {
           </div>
           <button className={styles.buttonBlue}>Lease Today</button>
         </div>
-        <Image alt={"lexmark 4143"} src={`/manCartoon.png`} width={450} height={300} />
+        <div className={styles.mobileNone} >
+          <Image alt={"lexmark 4143"} src={`/manCartoon.png`} width={450} height={300} />
+        </div>
       </div>
       <div className={styles.sectionNormal}>
         <div className={styles.copierContainer}>
@@ -131,9 +133,9 @@ const Home = () => {
           <Image alt={"lexmark 4143"} src={`/6153.webp`} width={300} height={250} />
         </div>
         <div className={styles.centerMain}>
-          <div className={styles.titleRow}>
-            Our Most Reliable
-            <div className={styles.blue}>Multifunction Copier</div>
+          <div className={styles.title}>
+            Our Most Reliable Multifunction Copier
+            
           </div>
           <div className={styles.bulletPoint}>
             <div className={styles.flexCenter}>
@@ -272,7 +274,7 @@ const Home = () => {
                     </div>
                   </div>
 
-<div className={styles.line}></div>
+                  <div className={styles.line}></div>
 
                   <div>
                     <div className={styles.titleSmal}>11 x 17 needed </div>
@@ -292,7 +294,7 @@ const Home = () => {
                         setStandingColor(!standingColor)
                       }} type="checkbox"></input>
                     </div>
-                  </div>                  
+                  </div>
                   <div>
                     <div className={styles.titleSmal}>Letter and Legal </div>
                     <div className={styles.row}>
@@ -361,7 +363,7 @@ const Home = () => {
           </div>
           <button className={styles.buttonBlueSmall} onClick={() => {
             let result = []
-            
+
             if (standingNumber === true && standingBlack === true & standingEleven === true) {
               result.push({ Type: "XM9145", Image: "9145.webp", size: "Standing", paper: "11 x 17", color: "Black & White", route: "9145" })
             }
@@ -380,10 +382,10 @@ const Home = () => {
             if (desktopNumber === true && desktopBlack === true & desktopLegal === true) {
               result.push({ Type: "XC5365", Image: "5365.webp", size: "Desktop", paper: "Letter and Legal", color: "Black & White", route: '5365' })
             }
-          
+
             setCopierChoice(result)
             // console.log(JSON.stringify(result), "this is important info")
-            JSON.stringify(localStorage.setItem("copierChoice", JSON.stringify(result)))  
+            JSON.stringify(localStorage.setItem("copierChoice", JSON.stringify(result)))
           }}>Get Result</button>
         </div>
 
@@ -589,7 +591,9 @@ const Home = () => {
             Get My Quote
           </button>
         </div>
-        <Image alt={"handshake"} src={'/handshake.webp'} height={600} width={500} />
+        <div className={styles.mobileNone}>
+          <Image alt={"handshake"} src={'/handshake.webp'} height={600} width={500} />
+        </div>
       </div>
       <div className={styles.centerBoxColumn}>
         <div style={{ padding: "20px" }} className={styles.title}>About Copiers Arizona</div>

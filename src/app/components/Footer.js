@@ -24,7 +24,7 @@ export default function Footer() {
               <div className={styles.footerChoice}>About Us</div>
             </div>
           </div>
-          <div>
+          <div className={styles.mobileNone}>
             <Image alt={"copiers arizona logo"} src={'/logo.webp'} height={300} width={300} />
           </div>
         </div>

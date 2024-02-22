@@ -855,13 +855,32 @@
   }
 }
 @media (max-width: 650px) {
-  .columnContainer {
-    flex-direction: column;
-    align-items: flex-end;
+  .logoContainer{
+    position: relative;    
+    width: 150px;
+    height: 150px;
+  }
+  .titleSmallHeader{
+    font-size: 12px;
+  }
+  .infoSmall{
+    font-size: 10px;
+  }
+  .infoMedium{
+    font-size: 12px;
+  }
+  .columnContainer {    
+    align-items: center;
     text-align: end;
   }
   .bottomProductContainer{
     width: 95%;
+  }
+  .mediumColumn{
+    display: none;
+  }
+  .rowHead{
+    width: 100%;
   }
   .paragraph{
     font-size: 20px;

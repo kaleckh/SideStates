@@ -10,13 +10,14 @@ export default function Header() {
     <>
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
-          <Image
-            alt={"copiers arizona"}
-            src={`/logo.webp`}
+          <div className={styles.logoContainer}>
+            <Image
+              alt={"copiers arizona"}
+              src={`/logo.webp`}
 
-            width={270}
-            height={270}
-          />
+              fill={true}
+            />
+          </div>
           <div className={styles.columnContainer}>
             <div />
             <div className={styles.rowHead}>
@@ -26,16 +27,7 @@ export default function Header() {
               <Link href={'/products'}>
                 <div className={styles.titleSmallHeader}>Our Models</div>
               </Link>
-              <div className={styles.titleSmallHeader}>About Us</div>
-              <div className={styles.cartContainer}>
-                <Link href={'/cart'}>
-                  <Image
-                    src="/cart.webp"
-                    alt="buy a used or new business copier"
-                    fill={true}
-                  />
-                </Link>
-              </div>
+              <div className={styles.titleSmallHeader}>About Us</div>              
             </div>
             <div className={styles.mediumColumn}>
               <div className={styles.infoSmall}>info@copiersutah.com</div>
