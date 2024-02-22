@@ -245,11 +245,11 @@ const Home = () => {
         <div style={{ padding: "8px" }} className={styles.sentence}>
           Take Our Quiz And See Our Reccomended Copiers For You
         </div>
-        <div> Check which options you wanna see!</div>
+        {/* <div> Check which options you wanna see!</div> */}
         <div className={styles.rowButton}>
           <div className={styles.rowNormal}>
             <div className={styles.flexLarge}>
-              <div style={{ width: "25%" }}>
+              <div className={styles.twenty}>
                 <div className={styles.column}>
                   <div className={styles.smallTitle}>Floor Standing Copiers</div>
                   <input className={styles.inputSingle}
@@ -277,7 +277,7 @@ const Home = () => {
                   <div className={styles.line}></div>
 
                   <div>
-                    <div className={styles.titleSmal}>11 x 17 needed </div>
+                    <div className={styles.titleSmal}>11 x 17  </div>
                     <div className={styles.row}>
                       <input onChange={() => {
                         setStandingEleven(!standingEleven)
@@ -307,7 +307,7 @@ const Home = () => {
               </div>
             </div>
             <div className={styles.flexLarge}>
-              <div style={{ width: "25%" }}>
+              <div className={styles.twenty}>
                 <div className={styles.column}>
                   <div className={styles.smallTitle}>Desktop Copiers</div>
                   <input className={styles.inputSingle}
@@ -342,7 +342,7 @@ const Home = () => {
 
                 <div className={styles.smallColumn}>
                   <div>
-                    <div className={styles.titleSmal}>11 x 17 needed </div>
+                    <div className={styles.titleSmal}>11 x 17  </div>
                     <div className={styles.row}>
                       <input onClick={() => {
                         setDesktopEleven(!desktopEleven)

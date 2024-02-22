@@ -27,7 +27,7 @@ export default function Header() {
               <Link href={'/products'}>
                 <div className={styles.titleSmallHeader}>Our Models</div>
               </Link>
-              <div className={styles.titleSmallHeader}>About Us</div>              
+              <div className={styles.titleSmallHeader}>About Us</div>               
             </div>
             <div className={styles.mediumColumn}>
               <div className={styles.infoSmall}>info@copiersutah.com</div>

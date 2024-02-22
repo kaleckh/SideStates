@@ -692,6 +692,9 @@
   flex-direction: column;
 
 }
+.twenty{
+  width: 25%;
+}
 .rowSmall{
   display: flex;
   justify-content: space-evenly;
@@ -1228,6 +1231,25 @@
   .fifty{
     width: 40%;
     margin: 10px;
+  }
+  .sectionColumn{
+    padding: 20px;
+  }
+  .titleSmal{
+    font-size: 14px;
+  }
+  .smallTitle{
+    font-size: 18px;
+  }
+  .twenty{
+    width: 100%;
+  }
+  .sentence{
+    text-align: center;
+    font-size: 22px;
+  }
+  .line{
+    width: 90%;
   }
 
 }
