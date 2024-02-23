@@ -1,11 +1,11 @@
 "use client";
-import React, { useRef, useEffect,useContext } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import Header from "../components/Header";
 import Head from "next/head";
-import { CartContext } from "../../providers/queue/data";
 import Link from "next/link";
-import BreadCrumbs from "../components/Breadcrumbs";
+import { CartContext } from "../../providers/queue/data";
 // import Footer from "./footer/page";
+import BreadCrumbs from "../components/Breadcrumbs";
 import Image from "next/image";
 import { PatternFormat } from "react-number-format";
 import styles from "../page.module.css";
@@ -82,7 +82,6 @@ const Home = () => {
       );
     }
   }, []);
-
   const breadCrumbs = [
     { name: "Home", url: "/" },
   ]
@@ -100,7 +99,7 @@ const Home = () => {
       <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.section}>
         <div className={styles.copierContainer}>
-          <Image alt={"lexmark 8160"} src={`/9225.webp`} width={300} height={250} />
+          <Image alt={"lexmark 8160"} src={`/9335.webp`} width={300} height={300} />
           <div className={styles.rowSpace}>
             <div className={styles.thick}>Model:</div>
             <div>Lexmark XC9335</div>
@@ -111,15 +110,15 @@ const Home = () => {
           <div className={styles.bulletPoint}>
             <div className={styles.flexCenter}>
               <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>Print speeds at 25 pages per minute</div>
+              <div>Print speeds at 52 per minute</div>
             </div>
             <div className={styles.flexCenter}>
               <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>largest Print size is 12.6 x 18 in</div>
+              <div>largest Print size is 8.5 in x 14.0 in</div>
             </div>
             <div className={styles.flexCenter}>
               <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
-              <div>First page out time is 7 seconds</div>
+              <div>First page out time is 7 Seconds</div>
             </div>
             <div className={styles.flexCenter}>
               <Image alt={"lexmark 4143"} src={`/seen.webp`} width={25} height={25} />
@@ -128,21 +127,21 @@ const Home = () => {
           </div>
 
           <div className={styles.fifty}>
-            <Link href={'/cart'}>
+            {/* <Link href={'/cart'}>
               <button onClick={() => {
                 const updatedCart = [
                   ...cart,
-                  { title: "9335", price: "", image: "/9335.webp" }
+                  { title: "6153", price: 10, quantity: 10, id: 1, image: "/6153.webp" }
                 ]
                 setCart(updatedCart)
               }} className={styles.button}>Add To Cart</button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
       <div className={styles.center}>
         <div className={styles.sectionSmall}>
-          <div>Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.</div>
+          
           <div>Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.</div>
         </div>
       </div>
@@ -150,7 +149,7 @@ const Home = () => {
         <div className={styles.lineSmall}></div>
       </div>
 
-      <div className={styles.centerBox}>
+      {/* <div className={styles.centerBox}>
         <div style={{ paddingBottom: "10px" }} className={styles.titleThin}>Our Select Reliable Choices</div>
         <div className={styles.titleSmall}>(Our favorite options)</div>
         <div className={styles.grid}>
@@ -224,10 +223,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={styles.centerBoxRow}>
         <div className={styles.container}>
-          <div className={styles.titleForm}>Get Your free Quote Today!</div>
+          <h2 className={styles.black}>Get Your free Quote!</h2>
           <div
             style={{
               width: "100%",
@@ -239,79 +238,65 @@ const Home = () => {
             }}
           >
             <div className={styles.space}>
-              <div className={styles.formContainer}>
-                <div className={styles.titleSmall}>Full Name</div>
 
-                <input
-                  className={styles.inputSingle}
-                  placeholder="Enter Full Name"
-                  type="text"
-                  name=""
-                  id=""
-                  required={true}
-                  onChange={() => {
-                    setName(event.target.value);
-                  }}
-                />
-
-              </div>
-              <div className={styles.formContainer}>
-                <div className={styles.titleSmall}>Phone Number</div>
-                <input
-                  className={styles.inputSingle}
-                  type="tel"
-                  name="telphone"
-                  placeholder="Full Phone Number"
-                  pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-                  maxLength="12"
-                  title="Ten digits code"
-                  onChange={() => {
-                    setNumber(event.target.value);
-                  }}
-                  required
-                />
-              </div>
-            </div>
-            <div className={styles.spaceBottom}>
-              <div>
-                <div className={styles.titleSmall}>Email</div>
-                <input className={styles.inputSingle} placeholder={"Enter Full Email"} type="text" />
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", width: "50%", paddingLeft: "10px" }}>
-                <div className={styles.row}>
-                  <input className={styles.circle} type="checkbox" />
-                  <div className={styles.titleSmallNo}>Call</div>
-                </div>
-                <div className={styles.row}>
-                  <input className={styles.circle} type="checkbox" />
-                  <div className={styles.titleSmallNo}>Email</div>
-                </div>
-
-
-              </div>
-            </div>
-
-            <div style={{ width: "80%" }}>
-              <div className={styles.titleSmall}>Message</div>
               <input
-                onChange={() => {
-                  setMessage(event.target.value);
-                }}
-                className={styles.inputSingleFull}
-                placeholder="Full Message"
+                style={{ outline: "none", backgroundColor: "transparent", border: "1px solid rgb(210,210,210)", borderRadius: "5px", padding: "15px", width: "100%", margin: "5px" }}
+
+                className={styles.inputSingle}
+                placeholder="Full name"
                 type="text"
+                name=""
+                id=""
+                required={true}
+              // onChange={() => {
+              //   setName(event.target.value);
+              // }}
+              />
+              <input
+                style={{ outline: "none", backgroundColor: "transparent", border: "1px solid rgb(210,210,210)", borderRadius: "5px", padding: "15px", width: "90%", margin: "5px" }}
+                className={styles.inputSingle}
+                placeholder="Email"
+                type="text"
+                name=""
+                id=""
+                required={true}
+              // onChange={() => {
+              //   setEmail(event.target.value);
+              // }}
+              />
+            </div>
+            <div className={styles.space}>
+
+              <PatternFormat
+                format="+1 (###) ### ####"
+                allowEmptyFormatting
+                mask="_"
+                className={styles.phoneNumber}
+                onChange={(event) => {
+                  setNumber(event.target.value);
+                }}
               />
             </div>
 
+            <div className={styles.space}>
+
+              <input
+                style={{ outline: "none", backgroundColor: "transparent", border: "1px solid rgb(210,210,210)", borderRadius: "5px", padding: "15px", width: "90%" }}
+                onChange={() => {
+                  setMessage(event.target.value);
+                }}
+                className={styles.inputSingle}
+                placeholder="Comments"
+                type="text"
+              />
+            </div>
           </div>
           <div
             style={{ height: "25%", display: "flex" }}
             className={styles.padding}
           >
-
             <ReCAPTCHA
               style={{
-                padding: "20px",
                 marginBottom: "10px",
                 display: "flex",
                 justifyContent: "center",
@@ -319,20 +304,23 @@ const Home = () => {
               className="recaptcha"
               sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
               ref={captchaRef}
+              onChange={verifyCallback}
             />
           </div>
           <button
-            className={styles.buttonBlue}
-            onClick={() => {
-              props.quote();
-              handleClick();
+            onClick={(e) => {
+              // setQuoteToggle(!quoteToggle);
+              // sendEmail(e);
             }}
-
+            className={styles.buttonBlue}
+          // disabled={!toggle}
           >
-            Get My Free Quote
+            Get My Quote
           </button>
         </div>
-        <Image alt={"handshake"} src={'/handshake.webp'} height={600} width={500} />
+        <div className={styles.mobileNone}>
+          <Image alt={"handshake"} src={'/handshake.webp'} height={600} width={500} />
+        </div>
       </div>
       <div className={styles.centerBoxColumn}>
         <div style={{ padding: "20px" }} className={styles.title}>About Copiers Arizona</div>

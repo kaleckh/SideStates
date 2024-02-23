@@ -168,6 +168,12 @@
   width: 200px;
 }
 
+.logoContainer{
+  position: relative;
+  height: 200px;
+  width: 200px;
+}
+
 .thirdSection {
   display: flex;
   height: 30%;

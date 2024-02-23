@@ -478,7 +478,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.boxContainer}>
+            {/* <div className={styles.boxContainer}>
               <div className={styles.box}>
                 <div className={styles.titleMed}>
                   Our Favorite  And White Option
@@ -493,7 +493,7 @@ const Home = () => {
                   </Link>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

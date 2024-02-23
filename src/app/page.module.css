@@ -1168,6 +1168,20 @@
   
 }
 @media (max-width: 650px) {
+  .section{
+    flex-direction: column;
+    height: fit-content;
+    padding: 20px;
+    width: 100%;
+  }
+  .rowSpace{
+    width: 85%;
+  }
+  .sectionSmall{
+    height: fit-content;
+    padding-bottom: 30px;
+    width: 90%;
+  }
   .columnContainer {
     flex-direction: column;
     align-items: flex-end;
@@ -1181,6 +1195,7 @@
   }
   .title{
     font-size: 25px;
+    padding: 20px;
     
   }
   .row{
@@ -1250,6 +1265,9 @@
   }
   .line{
     width: 90%;
+  }
+  .inputSingle{
+    width: 100%;
   }
 
 }
