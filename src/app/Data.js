@@ -394,7 +394,7 @@ const Home = () => {
           <div className={styles.gridLarge}>
             {copierChoice.map((item) => {
               return (
-                <div className={styles.boxContainerRow}>
+                <div key={index} className={styles.boxContainerRow}>
                   <div className={styles.boxRow}>
                     <div className={styles.titleMed}>
 
